@@ -59,3 +59,8 @@ typings/
 
 # Output
 public/
+
+# themes
+themes/yilia
+
+# db json files
