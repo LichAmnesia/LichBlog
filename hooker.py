@@ -2,14 +2,18 @@
 # @Author: lich
 # @Date:   2017-08-13 17:21:11
 # @Email: alwaysxiaop@gmail.com
-# @Last Modified by:   lich
-# @Last Modified time: 2017-08-13 17:21:36
+# @Last Modified by:   Lich_Amnesia
+# @Last Modified time: 2017-08-13 19:48:38
 # schedule a job to be run in a process pool on 24 hours intervals.
 
 from datetime import datetime
 import os
 
 from apscheduler.schedulers.blocking import BlockingScheduler
+
+from pytz import timezone
+# Use America/Denver time as default time.
+mountain_time = timezone("America/Denver")
 
 
 def pull_job():
@@ -20,7 +24,8 @@ def pull_job():
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
     scheduler.add_executor('processpool')
-    scheduler.add_job(pull_job, 'interval', seconds=20)
+    scheduler.add_job(pull_job, 'cron',
+                      day_of_week='mon-sun', hour=21, minute=30, timezone=mountain_time)
     print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
 
     try:
