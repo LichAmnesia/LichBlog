@@ -1,8 +1,7 @@
 ---
 title: Word office 查找 通配符
 tags:
-  - Word
-  - 通配符
+  - Windows
 date: 2014-02-11 18:38:23
 ---
 

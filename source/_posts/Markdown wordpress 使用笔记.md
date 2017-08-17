@@ -1,7 +1,7 @@
 ---
 title: Markdown wordpress 使用笔记
 tags:
-  - Markdown
+  - hexo
 date: 2015-06-10 20:03:50
 ---
 
@@ -50,15 +50,16 @@ another [link][2].
 *   代码块 使用`Code`即可````Code````
 *   相应代码高亮使用
 
-    #button {
-        border: none;
-    }
-    `</pre>
+```
+#button {
+   border: none;
+}
+```
 
-    使用举例：
+使用举例：
 
-    <pre class="lang:default decode:true " >```css
-    #button {
-        border: none;
-    }
-    ``
+```css
+#button {
+    border: none;
+}
+```

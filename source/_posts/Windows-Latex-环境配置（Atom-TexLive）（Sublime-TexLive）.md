@@ -2,7 +2,6 @@
 title: Windows Latex 环境配置（Atom + TexLive）（Sublime + TexLive）
 date: 2016-08-30 08:37:23
 tags:
-    - Latex
     - Windows
 ---
 
