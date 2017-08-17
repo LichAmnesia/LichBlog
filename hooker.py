@@ -3,7 +3,7 @@
 # @Date:   2017-08-13 17:21:11
 # @Email: alwaysxiaop@gmail.com
 # @Last Modified by:   Lich_Amnesia
-# @Last Modified time: 2017-08-13 20:14:03
+# @Last Modified time: 2017-08-17 15:29:26
 # schedule a job to be run in a process pool on 24 hours intervals.
 
 from datetime import datetime
@@ -19,8 +19,11 @@ mountain_time = timezone("America/Denver")
 def pull_job():
     print('The time is: %s' % datetime.now())
     os.system("git checkout -- db.json")
+    os.system("git checkout -- package.json")
+    os.system("npm i")
     os.system("git pull")
     os.system("hexo g")
+    print('The time is: %s' % datetime.now())
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
