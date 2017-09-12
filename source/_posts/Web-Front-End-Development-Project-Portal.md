@@ -8,14 +8,14 @@ toc: true
 ---
 
 
-# 1. Design for Class Portal
+## 1. Design for Class Portal
 Mainly use material design to construct the portal. There are some basic requirements for the portal:
 
 - Have sections for labs, projects
 - Include the link to the project journal
 - Should use responsible web design to vary in different devices
 
-# 2. Milestone 1
+## 2. Milestone 1
 
 - The portal theme is material design. [Material Design Doc](https://material.io/)
 - The portal has a navigation bar to help user lead to different types of assignments. And in the content part, there some cards which link to the project page or lab page.
