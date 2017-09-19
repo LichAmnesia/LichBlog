@@ -7,28 +7,28 @@ tags:
 toc: true
 ---
 
-
-## 1. Design for Class Portal
+# 1. Portal 
+## 1.1 Design for Class Portal
 Mainly use material design to construct the portal. There are some basic requirements for the portal:
 
 - Have sections for labs, projects
 - Include the link to the project journal
 - Should use responsible web design to vary in different devices
 
-## 2. Portal Milestone 1
+## 1.2 Portal Milestone 1
 
 - The portal theme is material design. [Material Design Doc](https://material.io/)
 - The portal has a navigation bar to help user lead to different types of assignments. And in the content part, there some cards which link to the project page or lab page.
 - In different devices, it varies based on the window width.
 - First user will be in the overview page, which includes all the projects, labs, project journal. In the navigation bar, there are overview tab, projects tab and labs tab. User can click different tabs to see different pages.
 
-## 3. Portal Milestone 2
+## 1.3 Portal Milestone 2
 
 ### Document the process you went through creating your portal.
 
-- 1. I came to draw a stretch for the portal. 
-- 2. I used the material design from the docs to design the portal.
-- 3. Tested the portal to make sure it works well.
+- I came to draw a stretch for the portal. 
+- I used the material design from the docs to design the portal.
+- Tested the portal to make sure it works well.
 
 ### Iterations of your visual design.
 
@@ -47,3 +47,12 @@ I learned how to write a responsible website and how to use material design in m
 
 ### A link to your portal
 The link to the portal, [Link](http://creative.colorado.edu/~shhu2952/fwd/)
+
+--- 
+
+# 2. Project 1
+## 2.1 Project 1 Milestone 1
+### Description of your project including the inspiration, social issue, and intended audience for your site.
+
+### Visual design for your project. This could be a sample mockup or hand-drawn sketch. You can include multiple designs if you haven't yet decided.
+### Include any content or sources needed for your site.
