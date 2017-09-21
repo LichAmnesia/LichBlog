@@ -40,7 +40,9 @@ Mainly use material design to construct the portal. There are some basic require
 The foot part can't show as I expect. The foot part is too wide for me but I can't change the size or position. It will show differently in different window size.
 
 ### Sources you used in creating your portal
-Mostly, I used the [material design docs](https://material.io/) to help me design the whole portal. 
+
+- Mostly, I used the [material design docs](https://material.io/) to help me design the whole portal. 
+- Also, I used [trianglify](http://qrohlf.com/trianglify/) and [chroma.js](http://gka.github.io/chroma.js/) to generate low-poly images in the portal. 
 
 ### Lessons learned
 I learned how to write a responsible website and how to use material design in my portal. Next time, I want to learn how to make the interactions more smoothly and change the layout.
