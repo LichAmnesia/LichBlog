@@ -65,6 +65,8 @@ git clone https://github.com/bhilburn/powerlevel9k.git  ~/.oh-my-zsh/custom/them
 ZSH_THEME=”powerlevel9k/powerlevel9k”
 ```
 
+
+
 [教程](https://gist.github.com/kevin-smets/8568070)
 
 **需要安装iTerm2**
@@ -73,9 +75,10 @@ ZSH_THEME=”powerlevel9k/powerlevel9k”
 
 Font is 14pt Iconsolata for Powerline with [Solarized Dark](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark.itermcolors) iterm2 colors.
 
+**配置.zshrc文件**
 ```
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status rbenv)
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -110,6 +113,19 @@ pip3 install requests keras sklearn pandas seaborn
 1. Install maclatex
 2. Install LatexTools
 3. Install SKIM PDF viewer, set   Preferences > Sync,  Uncheck “Check for file changes” option, Preset as "Sublime Text"
+
+### 2.5 Install Mysql
+进入 mysql 官网下载，安装完成之后需要到系统偏好设置里面打开 mysql 服务。
+
+然后进入`/usr/local/mysql/bin`，看是否有 mysql。然后添加以下到`.zshrc`文件：
+```
+# Add mysql bin to the PATH
+PATH=$PATH:/usr/local/mysql/bin
+```
+然后`source ~/.zshrc`即可。
+```
+mysql -u root -p
+```
 
 
 ----

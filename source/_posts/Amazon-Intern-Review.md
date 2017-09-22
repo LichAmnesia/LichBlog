@@ -9,6 +9,8 @@ tags:
 ### Hiking
 Go hiking three times. Seattle is very beautiful place when you like. 2 weeks hiking one time. 
 
+<!-- more -->
+
 - Twin springs falls
 - lake 22
 - Mt. Rainier, summerland trail.
