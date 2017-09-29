@@ -8,9 +8,13 @@ toc: true
 ---
 
 ## 1. Install database
-In this post, we just use mysql as the database. You can use other databases as well.
-First, you should install mysql in your computer.
-Then in terminal use to enter mysql:
+In this post, we just use mysql as the database. You can use other databases as well. 
+
+<!-- more -->
+
+First, you should install mysql in your computer. Then in terminal use your password to open mysql:
+
+
 ```
 > mysql -u root -p
 ```
