@@ -68,3 +68,11 @@ I want to design a game about migration-refugee. In the game your job is an immi
 
 - [Paper, Please on Steam](http://store.steampowered.com/app/239030/Papers_Please/)
 - [The Database of Faces](http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html)
+
+
+## 2.2 Project 1 Milestone 2
+### Partially functional prototype or mockup
+The [Mockup](http://creative.colorado.edu/~shhu2952/fwd/projects/project1/) is about visual design of the project. 
+
+### Interactions
+- Each time, players will see different people and their information. Then they will decide to accept or deny their admissions.

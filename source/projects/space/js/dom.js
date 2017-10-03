@@ -2,7 +2,7 @@
  * @Author: Lich_Amnesia
  * @Date:   2017-09-17 21:28:53
  * @Last Modified by:   Lich_Amnesia
- * @Last Modified time: 2017-10-03 00:33:50
+ * @Last Modified time: 2017-10-03 01:04:28
  */
 
 // set sky background 
@@ -78,7 +78,6 @@ function drawNebulae() {
         var p = pointsArr[_i];
         v = noise.perlin2(p.x * period, p.y * period);
         var my_gradient = ctx.createLinearGradient(0, 0, 800, 800);
-        // chroma.random();
         my_gradient.addColorStop(0, "hsla(" + (Math.floor(color1)) + ", 90%, 50%, 0.06)");
         my_gradient.addColorStop(1, "hsla(" + (Math.floor(color2)) + ", 90%, 50%, 0.06)");
         ctx.fillStyle = my_gradient;
@@ -101,21 +100,3 @@ function delay(argument) {
     setInterval(drawNebulae, 1);
 }
 
-
-$("#start").click(function() {
-    $("canvas").animate({
-        left: '250px',
-        opacity: '0.5',
-        height: '150px',
-        width: '150px'
-    });
-});
-
-$("#stop").click(function() {
-    $("canvas").animate({
-        left: '250px',
-        opacity: '1',
-        height: '800px',
-        width: '1440px'
-    });
-});
