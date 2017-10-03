@@ -75,4 +75,6 @@ I want to design a game about migration-refugee. In the game your job is an immi
 The [Mockup](http://creative.colorado.edu/~shhu2952/fwd/projects/project1/) is about visual design of the project. 
 
 ### Interactions
-- Each time, players will see different people and their information. Then they will decide to accept or deny their admissions.
+- Each time, players will see different people and their information. Then they will decide to accept or deny their entry.
+- After players decide, the page will generate a new person.
+- More content will be added.
