@@ -78,3 +78,11 @@ The [Mockup](http://creative.colorado.edu/~shhu2952/fwd/projects/project1/) is a
 - Each time, players will see different people and their information. Then they will decide to accept or deny their entry.
 - After players decide, the page will generate a new person.
 - More content will be added.
+
+## 2.3 Project 1 Milestone 3
+
+This is about immigration issues. This game is kind of like a game called papers, please. In the game your job is an immigration inspector to control the people entering your country. You need to inspect the immigrants and visitors to to find hidden terrorists, smugglers and so on. What you do here is very simple. Just look at the portrait, passport, there answers to the immigrationn questions. And decide to allow them enter or reject them to enter your country. Each time the game will generate a new person, with her/his portrait and passport. 
+
+It's built by pixi.js. And the picture is computed offline by a low poly script. Low poly is a polygon mesh in 3D computer graphics that has a relatively small number of polygons. 
+
+The only interaction is to approve the entry or deny the entry.
