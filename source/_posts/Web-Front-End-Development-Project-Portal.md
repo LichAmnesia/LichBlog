@@ -86,3 +86,6 @@ This is about immigration issues. This game is kind of like a game called papers
 It's built by pixi.js. And the picture is computed offline by a low poly script. Low poly is a polygon mesh in 3D computer graphics that has a relatively small number of polygons. 
 
 The only interaction is to approve the entry or deny the entry.
+
+## 2.4 Project 1 Milestone 4
+In this project, I think if I add more description about this project. To make it clear about immigration issue. That will be better. Also, The game doesn't have a summary about the immigration issue. 
