@@ -16,6 +16,8 @@ The original design is:
 - User came to the website, show the nearby restraunts.
 - User search restraunts, show the results returned by Yelp and show in the Google Map.
 
+<!-- more -->
+
 ### Visual Design
 ![Mockup](http://7xrh75.com1.z0.glb.clouddn.com/project2Mockup.png) 
 

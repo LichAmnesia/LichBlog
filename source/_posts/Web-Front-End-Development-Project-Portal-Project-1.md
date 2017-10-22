@@ -14,6 +14,7 @@ toc: true
 <!-- Description of your project including the inspiration, social issue, and intended audience for your site. -->
 I want to design a game about migration-refugee. In the game your job is an immigration inspector to control the people entering your country. You need to inspect the immigrants and visitors to to find hidden terrorists, smugglers and so on. The indented audience for this site should be the people that care about immigration issues.  The inspiration is from the game called Papers, Please. It's kind of a web version of this PC game.
 
+<!-- more -->
 
 ### Visual design for your project
 <!--  This could be a sample mockup or hand-drawn sketch. You can include multiple designs if you haven't yet decided. -->

@@ -16,6 +16,8 @@ Mainly use material design to construct the portal. There are some basic require
 - Include the link to the project journal
 - Should use responsible web design to vary in different devices
 
+<!-- more -->
+
 ## 1.2 Portal Milestone 1
 
 - The portal theme is material design. [Material Design Doc](https://material.io/)

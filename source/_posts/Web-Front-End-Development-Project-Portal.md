@@ -8,14 +8,14 @@ toc: true
 ---
 
 ## 1. Portal 
-[Design for Class Portal]()
+[Design for Class Portal](http://alwa.info/2017/10/22/Web-Front-End-Development-Project-Portal-Portal-Design/)
 
 ---
 
 ## 2. Project 1
-[Design for Project #1]()
+[Design for Project #1](http://alwa.info/2017/10/22/Web-Front-End-Development-Project-Portal-Project-1/)
 
 ---
 
 ## 3. Project 2
-[Design for Project #2]()
+[Design for Project #2](http://alwa.info/2017/10/22/Web-Front-End-Development-Project-Portal-Project-2/)
