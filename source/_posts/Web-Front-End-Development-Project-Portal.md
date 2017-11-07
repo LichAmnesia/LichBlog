@@ -22,4 +22,4 @@ toc: true
 
 
 ## 4. Grad Project
-[Design for Grad Project](http://alwa.info/2017/10/22/Web-Front-End-Development-Project-Portal-Project-2/)
+[Design for Grad Project](http://alwa.info/2017/11/07/Web-Front-End-Development-Project-Portal-Grad-Project/)
