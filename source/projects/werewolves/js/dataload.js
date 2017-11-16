@@ -2,10 +2,10 @@
 * @Author: Lich_Amnesia
 * @Date:   2017-11-10 10:31:33
 * @Last Modified by:   Lich_Amnesia
-* @Last Modified time: 2017-11-10 14:58:50
+* @Last Modified time: 2017-11-16 15:20:26
 */
 
-
+// append Item to list
 function appendItem(rowid, name, godscore, winrate, total_games, wolves_games, wolves_winrate, 
                 goodman_games, goodman_winrate, civilian_games, civilian_winrate, 
                 foreteller_games, foreteller_winrate, witch_games, witch_winrate, 
@@ -163,7 +163,10 @@ function appendItem(rowid, name, godscore, winrate, total_games, wolves_games, w
         
 var data;
 $(document).ready(function(e) {
-    $.getJSON( 'static/data.json' , function( result ){
+    $.get( 'https://docs.google.com/spreadsheets/d/1Oo87FqRH5ni6cqhGyls6h6Q4ujArmoszCWqUOtPhgYE/gviz/tq?tq=select%20*' , function( result ){
+        result = result.replace('\/\*O\_o\*\/\ngoogle\.visualization\.Query\.setResponse\(','');
+        result = result.slice(0, -2);
+        result = JSON.parse(result);
         data = result.table.rows;
         var _id = 0;
         data.forEach(function(element) {
@@ -298,12 +301,6 @@ $(document).ready(function(e) {
 });
 
 
-
-
-// $($('th.sort')[0]).trigger('click', function () {
-//     console.log('clicked');
-// });
-
 $('input.search').on('keyup', function (e) {
     if (e.keyCode === 27) {
         $(e.currentTarget).val('');
@@ -312,10 +309,10 @@ $('input.search').on('keyup', function (e) {
 });
 
 
-
-var checkBoxes = table.querySelectorAll('tbody .mdl-data-table__select');
 function addCheckBoxTrigger() {
     var table = document.querySelector('table');
+    var checkBoxes = table.querySelectorAll('tbody .mdl-data-table__select');
+
     var headerCheckbox = table.querySelector('thead .mdl-data-table__select input');
     var boxes = table.querySelectorAll('tbody .mdl-data-table__select');
     var headerCheckHandler = function(event) {
