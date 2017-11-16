@@ -35,6 +35,7 @@ Here the messages and paper planes information are stored in a firebase database
 ### Data or API 
 - [Google Map API](https://developers.google.com/maps/)
 - [Firebase](https://firebase.google.com)
+- [paperplanes world](http://paperplanes.world)
 
 ## 2. Project 2 Milestone 2
 [Link to Project 2](http://creative.colorado.edu/~shhu2952/fwd/projects/project2/) - Now just implement the paper planes surrounding the planet. And store the paper planes data in firebase.
@@ -67,5 +68,9 @@ Also, I used three.js to make sure the flying animation works well. Each time, t
 - Add a net icon to see one message from the paper plane.
 
 ## 3. Project 2 Milestone 3
+Finish the todo list in Milestone 2. Now users can send a new paper plane with a message and location. Also the google map is embeded in it. Also, users can pick up a random paper plan to see its message and where it from.
 
 ## 4. Project 2 Milestone 4
+I think I learned a lot during this project, which includes how to build a 3D model and import into three.js. Also, I used what I learned from lab 4 and lab 5 that I can embed the google map API in my web application.
+
+I think if I add more animation part for the user iteractions about catching a paper plane or sending a paper plane. That will be better.
