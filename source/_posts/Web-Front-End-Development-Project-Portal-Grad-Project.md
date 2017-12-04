@@ -28,7 +28,7 @@ Haven't decided what the whole website should be. But the gallery part should lo
 
 
 ## 2. Grad Project Milestone 2
-[Link to Project 2](http://creative.colorado.edu/~shhu2952/fwd/projects/gradproject/) - Now I have implemented online gallery part. The Ins API and Pinterest API is hard to use in static website. So I plan to use firebase storage to store my images and use firebase to get these images to show as an online gallery.  
+[Link to Project 2](http://creative.colorado.edu/~shhu2952/fwd/) - Now I have implemented online gallery part. The Ins API and Pinterest API is hard to use in static website. So I plan to use firebase storage to store my images and use firebase to get these images to show as an online gallery.  
 
 ### Interactions
 
@@ -43,6 +43,14 @@ First, when user enters the website, jQuery will call firebase APIs to get image
 - User connect to Instagram to get all images from her Instagram
 
 ## 3. Grad Project Milestone 3
+Now I found a way to connect to Instagram API.
+
+User can't upload an image, but now he/she can log into Instagram and then see all his/her instragram images from the gallery. 
+
+However, If I need to use Instagram API, I need to log in and register a Instagram developer account. So the API is very limited. To see the gallery. You need to log in use my test account. Then you can see the posts of this instragram account.
+
+User name: shen.huang2017@gmail.com
+Password: shenhuang
 
 ## 4. Grad Project Milestone 4
 
