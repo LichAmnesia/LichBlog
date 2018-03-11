@@ -63,3 +63,8 @@ public/
 # themes
 themes/yilia
 
+
+.gitignore
+
+# ignore db files.
+db.json

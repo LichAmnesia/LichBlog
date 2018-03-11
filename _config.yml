@@ -6,13 +6,13 @@
 title: Lich_Amnesia's Blog
 subtitle:
 description:
-author: Shen Huang
+author: Lich_Amnesia
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://alwa.info
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

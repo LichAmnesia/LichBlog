@@ -28,7 +28,7 @@ Haven't decided what the whole website should be. But the gallery part should lo
 
 
 ## 2. Grad Project Milestone 2
-[Link to Project 2](http://creative.colorado.edu/~shhu2952/fwd/) - Now I have implemented online gallery part. The Ins API and Pinterest API is hard to use in static website. So I plan to use firebase storage to store my images and use firebase to get these images to show as an online gallery.  
+[Link to grad project](http://creative.colorado.edu/~shhu2952/fwd/) - Now I have implemented online gallery part. The Ins API and Pinterest API is hard to use in static website. So I plan to use firebase storage to store my images and use firebase to get these images to show as an online gallery.  
 
 ### Interactions
 
