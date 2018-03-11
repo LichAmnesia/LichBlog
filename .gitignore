@@ -66,5 +66,11 @@ themes/yilia
 
 .gitignore
 
-# ignore db files.
+# db files.
 db.json
+
+# package-lock
+package-lock.json
+
+# python cache files
+__pycache__/
