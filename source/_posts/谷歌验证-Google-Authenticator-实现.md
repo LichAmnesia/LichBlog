@@ -27,13 +27,13 @@ toc: true
 
 # 2. 使用
 下载安装[PyOTP](https://pyotp.readthedocs.io/en/latest/)。
-```
+```bash
 pip install pyotp
 ```
 
 ## 2.1 使用 Time-based OTPs
 
-```
+```python
 import pyotp
 import hashlib
 
@@ -48,26 +48,26 @@ totp.verify('492039') # => False
 
 ## 2.2 使用 Google Authenticator
 先生成一个密匙
-```
+```python
 pyotp.random_base32() # returns a 16 character base32 secret. Compatible with Google Authenticator and other OTP apps
 ```
 
 然后通过生成 Google QC code
-```
+```python
 pyotp.totp.TOTP('JBSWY3DPEHPK3PXP').provisioning_uri("alice@google.com", issuer_name="Secure App")
 ```
 这里默认是`period=30` `digits=6`, `algorithm=SHA1`
 
 这里加密算法可以是别的
 
-```
+```bash
 SHA1
 SHA256
 SHA512
 ```
 但是文档上说目前 Google Authenticator APP 只有 `SHA1`。经过测试已经支持了。
 
-```
+```python
 pyotp.totp.TOTP('RDSNLUX4KS5LNMMQ', digest=hashlib.sha256).provisioning_uri("admin@example.com", issuer_name="Wonder Futures")
 totp = pyotp.TOTP('RDSNLUX4KS5LNMMQ', digest=hashlib.sha256)
 totp.verify('222222')
@@ -78,10 +78,10 @@ totp.verify('222222')
 # 3. 生成 QR code 并使用 Google Authenticator APP
 安装[python-qrcode](https://github.com/lincolnloop/python-qrcode)
 
-```
+```bash
 pip3 install Pillow qrcode
 ```
-```
+```bash
 qr "otpauth://totp/Wonder%20Futures:admin%40wonderfutures.com?secret=RDSNLUX4KS5LNMMQ&issuer=Wonder%20Futures&algorithm=SHA256" > test.png
 ```
 
