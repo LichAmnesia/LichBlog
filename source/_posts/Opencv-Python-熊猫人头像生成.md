@@ -11,7 +11,7 @@ tags:
 # 1. 介绍
 之前看到有人发了一个Matlab程序，可以根据照片上的人脸抠出相应的眼睛鼻子嘴巴，然后放到熊猫人上。生成头像。
 熊猫人原型如下：
-![熊猫人](http://7xrh75.com1.z0.glb.clouddn.com/python_base.jpg)
+![熊猫人](http://storage.googleapis.com/lichamnesia.appspot.com/images/python_base.jpg)
 写出来的程序放在[Github](https://github.com/LichAmnesia/Pandamen-Generator)了。
 稍微说下程序流程。
 # 2. opencv的人脸识别
@@ -27,4 +27,4 @@ tags:
 记得要调用resize变化图像的大小，不然会很奇怪。
 
 # 5. 最终结果
-![熊猫人](http://7xrh75.com1.z0.glb.clouddn.com/python_merge_output_meizi_0.jpg)
+![熊猫人](http://storage.googleapis.com/lichamnesia.appspot.com/images/python_merge_output_meizi_0.jpg)

@@ -18,7 +18,7 @@ I want to design a game about migration-refugee. In the game your job is an immi
 
 ### Visual design for your project
 <!--  This could be a sample mockup or hand-drawn sketch. You can include multiple designs if you haven't yet decided. -->
-![Mockup](http://7xrh75.com1.z0.glb.clouddn.com/Web%20Front-End%20Development%20Project1.jpeg)
+![Mockup](http://storage.googleapis.com/lichamnesia.appspot.com/images/Web%20Front-End%20Development%20Project1.jpeg)
 
 
 ### Include any content or sources needed for your site.

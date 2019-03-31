@@ -28,10 +28,10 @@ http://shiyanjun.cn/archives/1002.html
 # 2. Hue 进行 Hive查询以及检测
 ### 2.1 进入Hue
 从CDH里面找到Hue并登陆
-![Hue首页](http://7xrh75.com1.z0.glb.clouddn.com/Hue_Hue%E9%A6%96%E9%A1%B5.PNG)
+![Hue首页](http://storage.googleapis.com/lichamnesia.appspot.com/images/Hue_Hue%E9%A6%96%E9%A1%B5.PNG)
 ### 2.2 Hive的执行检测
 在query edit的hive里面。可以看到。
-![hue的hive首页](http://7xrh75.com1.z0.glb.clouddn.com/Hue_HueHive%E9%A6%96%E9%A1%B5.PNG)
+![hue的hive首页](http://storage.googleapis.com/lichamnesia.appspot.com/images/Hue_HueHive%E9%A6%96%E9%A1%B5.PNG)
 可以选择一个语句，并点击查看结果可以看到语句的执行结果，并且可以导出成文件形式。
 如果查询结果不保存的话，集群重启之后之前的结果不保存。这个只能相当于一个Web UI的Hive。
 

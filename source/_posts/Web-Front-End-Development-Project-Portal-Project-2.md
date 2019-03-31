@@ -30,7 +30,7 @@ Here the messages and paper planes information are stored in a firebase database
 <!-- more -->
 
 ### Visual Design
-![Mockup1](http://7xrh75.com1.z0.glb.clouddn.com/project2mockup2.png) 
+![Mockup1](http://storage.googleapis.com/lichamnesia.appspot.com/images/project2mockup2.png) 
 
 ### Data or API 
 - [Google Map API](https://developers.google.com/maps/)
@@ -44,15 +44,15 @@ Here the messages and paper planes information are stored in a firebase database
 
 First, when user comes to the website, the user will see the page like the following mockup picture.
 
-![Mockup1](http://7xrh75.com1.z0.glb.clouddn.com/project2mockup1.png)
+![Mockup1](http://storage.googleapis.com/lichamnesia.appspot.com/images/project2mockup1.png)
 
 Then the user will type message to send. Besides the message, she can type her location. When she types the location, it will automatically call Google Map API. So she doesn't need to type all, the website will auto suggest her location to her. After that, she click submit. The website will generate a paper plane for her and fly arround the planet. All the infomation will be store by firebase API. The following picture shows after user submitting the message.
 
-![Mockup3](http://7xrh75.com1.z0.glb.clouddn.com/project2mockup3.png) 
+![Mockup3](http://storage.googleapis.com/lichamnesia.appspot.com/images/project2mockup3.png) 
 
 Second, the user can click the net icon to randomly show one message from other users. It will be like the following picture.
 
-![Mockup4](http://7xrh75.com1.z0.glb.clouddn.com/project2mockup4.png) 
+![Mockup4](http://storage.googleapis.com/lichamnesia.appspot.com/images/project2mockup4.png) 
 
 ### Logic and algorithms
 The whole website flow is like. User submit a message and user can pick to see a random message from others. 

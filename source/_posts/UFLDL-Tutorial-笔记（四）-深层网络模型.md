@@ -8,12 +8,12 @@ tags:
 
 # 1. 使用自我学习到深层网络模型
 　　在自我学习中，我们首先利用未标注数据训练一个稀疏自编码器。随后，给定一个新样 x，我们通过隐含层提取出特征 a。如下所示
-![稀疏编码器](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_300px-STL_SparseAE_Features.png)
+![稀疏编码器](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_300px-STL_SparseAE_Features.png)
 　　我们感兴趣的是分类问题，目标是预测样本的类别标号 y。我们拥有标注数据集 $\\{ (x\_l^{(1)}, y^{(1)}), (x\_l^{(2)}, y^{(2)}), \ldots (x\_l^{(m\_l)},y^{(m\_l)}) \\} ，包含 $m\_l$ 个标注样本。此前我们已经说明，可以利用稀疏自编码器获得的特征 $a^{(l)} 来替代原始特征。这样就可获得训练数据集 $ \\{ (a^{(1)},y^{(1)}), \ldots (a^{(m\_{l})}, y^{(m\_l)}) \\} $。最终，我们训练出一个从特征 $a^{(i)}$ 到类标号 $y^{(i)}$ 的 logistic 分类器。为说明这一过程，我们按照神经网络一节中的方式，用下图描述 logistic 回归单元（橘黄色）。
 
-![logistic 回归单元](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_380px-STL_Logistic_Classifier.png)
+![logistic 回归单元](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_380px-STL_Logistic_Classifier.png)
 　　考虑利用这个方法所学到的分类器（输入-输出映射）。它描述了一个把测试样本 x 映射到预测值 $ p(y=1|x) $的函数。将此前的两张图片结合起来，就得到该函数的图形表示。最终的分类器就是：
-![最终分类器](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_500px-STL_CombinedAE.png)
+![最终分类器](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_500px-STL_CombinedAE.png)
 
 　　该模型的参数通过两个步骤训练获得：在该网络的第一层，将输入 x 映射至隐藏单元激活量 a 的权值$ W^{(1)} $可以通过稀疏自编码器训练过程获得。在第二层，将隐藏单元 a 映射至输出 y 的权值$ W^{(2)} $可以通过 logistic 回归或 softmax 回归训练获得。
 

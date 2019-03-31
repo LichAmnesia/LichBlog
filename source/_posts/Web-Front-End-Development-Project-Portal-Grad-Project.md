@@ -18,7 +18,7 @@ The goal of this project is to try to use instagram or Pinterest API to generate
 
 Haven't decided what the whole website should be. But the gallery part should look like the following.
 
-![Mockup1](http://7xrh75.com1.z0.glb.clouddn.com/gradproject_mockup1.png) 
+![Mockup1](http://storage.googleapis.com/lichamnesia.appspot.com/images/gradproject_mockup1.png) 
 
 ### Data or API 
 - [Instagram API](https://www.instagram.com/developer/)

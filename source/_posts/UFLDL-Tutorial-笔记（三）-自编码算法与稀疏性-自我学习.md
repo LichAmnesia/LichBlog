@@ -18,7 +18,7 @@ tags:
 # 2. 自编码神经网络 
 ### 2.1 自编码神经网络含义
 　　在有监督学习中，训练样本是有类别标签的。现在假设我们只有一个没有带类别标签的训练样本集合  $ \\{x^{(1)}, x^{(2)}, x^{(3)}, \ldots\\} $，其中 $ x^{(i)} \in \Re^{n}$ 。自编码神经网络是一种无监督学习算法，它使用了反向传播算法，并让目标值等于输入值，比如 $ y^{(i)} = x^{(i)} $。下图是一个自编码神经网络的示例。
-　　![自编码神经网络](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_400px-Autoencoder636.png)
+　　![自编码神经网络](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_400px-Autoencoder636.png)
 　　自编码神经网络是尝试学习一个$ h\_{W,b}(x) \approx x $ 函数。也就是说它尝试逼近一个恒等函数，使得输出$ \hat{x} $接近于输入$x $。恒等函数虽然看上去没有学习的意义，但是当我们为自编码神经网络加入某些限制，比如限制隐藏神经元的数量，可以发现从输入数据发现一个有意义的结构。
 　　比如说神经网络的输入是一个10*10的图像，这样维度就是100，输出层也是$ y \in \Re^{100}$。但是网络中只有50个隐藏神经元，这个就让网络能够学习输入数据压缩表示。有的时候如果输入每一维都是独立同分布的高斯随机变量，那么压缩会非常难学习，但是如果某些输入特征是彼此相关的，那么这一算法就可以发现输入数据的这些相关性。
 　　这个有点类似于主成分分析（PCA）的输入数据的低维表示。
@@ -76,10 +76,10 @@ $$
 # 3. 自我学习
 ### 3.1 特征学习
 　　我们已经了解到如何使用一个自编码器（autoencoder）从无标注数据中学习特征。具体来说，假定有一个无标注的训练数据集 $ \\{ x\_u^{(1)}, x\_u^{(2)} $, \ldots, x\_u^{(m\_u)}\\}（下标 u 代表“不带类标”）。现在用它们训练一个稀疏自编码器（可能需要首先对这些数据做白化或其它适当的预处理）。
-    ![特征学习](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_350px-STL_SparseAE.png)
+    ![特征学习](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_350px-STL_SparseAE.png)
 
 　　利用训练得到的模型参数 $ W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}$，给定任意的输入数据 x，可以计算隐藏单元的激活量（activations）  a。如前所述，相比原始输入 x 来说， a 可能是一个更好的特征描述。下图的神经网络描述了特征（激活量 a）的计算。
-　　![训练激活量](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_300px-STL_SparseAE_Features.png)
+　　![训练激活量](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_300px-STL_SparseAE_Features.png)
 
 　　这实际上就是之前得到的稀疏自编码器，在这里去掉了最后一层。
 　　假定有大小为$ m\_l $的已标注训练集$ \\{ (x\_l^{(1)}, y^{(1)}),

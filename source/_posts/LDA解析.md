@@ -162,7 +162,7 @@ $$
 p(i)q(i,j)\alpha(i,j) = p(j)q(j,i)\alpha(j,i).
 $$
 其中Q为马氏链转移矩阵，p(x)为当前分布。
-![](http://7xrh75.com1.z0.glb.clouddn.com/MCMC.PNG)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/MCMC.PNG)
 
 ### 4.3 Gibbs Sampling
 Gibbs Sampling是针对Metropolis-Hastings算法在高维空间效率不高的情况（接受率$\alpha$通常小于1），将其在二维空间的应用。即在Gibbs采样中马氏链的转移只是轮换的沿着坐标轴x轴和y轴做转移，最终可以得到P(x,y)的样本。也可以把Gibbs采样扩展到n维。
@@ -170,7 +170,7 @@ Gibbs Sampling是针对Metropolis-Hastings算法在高维空间效率不高的�
 一般就是轮换坐标轴，然后按照条件概率做转移。马氏链也是一样可以收敛的。
 
 以下是n维Gibbs Sampling算法：
-![](http://7xrh75.com1.z0.glb.clouddn.com/LDA%E8%A7%A3%E6%9E%90/n_Gibbs.PNG)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/LDA%E8%A7%A3%E6%9E%90/n_Gibbs.PNG)
 
 # 5. 文本建模
 ### 5.1 Unigram Model
@@ -216,8 +216,8 @@ p(W \vert  \vec \alpha) &= \int p(W \vert \vec p) p(\vec p \vert \vec \alpha) d\
 $$
 ### 6. LDA 文本建模
 现在多了两个变量，一个是 Topic，一个是原本的词模型。这里语料库的文档是相互独立的。
-![](http://7xrh75.com1.z0.glb.clouddn.com/LDA%E8%A7%A3%E6%9E%90/LDA_1.PNG)
-![](http://7xrh75.com1.z0.glb.clouddn.com/LDA%E8%A7%A3%E6%9E%90/LDA_2.PNG)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/LDA%E8%A7%A3%E6%9E%90/LDA_1.PNG)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/LDA%E8%A7%A3%E6%9E%90/LDA_2.PNG)
 假设语料库有 M 篇文档，所有的 word 和对应 topic 如下：
 $$
 \vec w = (\vec w\_1, \cdots, \vec w\_M) \\\\

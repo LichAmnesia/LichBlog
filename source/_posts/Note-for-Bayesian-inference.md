@@ -27,5 +27,5 @@ $$
 P(\theta \vert x) = \frac{P(x \vert \theta)}{\int P(x \vert \theta)  C d\theta}
 $$
 
-{% pdf http://7xrh75.com1.z0.glb.clouddn.com/Bayesian%20Data%20Analysis.pdf %}
+{% pdf http://storage.googleapis.com/lichamnesia.appspot.com/images/Bayesian%20Data%20Analysis.pdf %}
 

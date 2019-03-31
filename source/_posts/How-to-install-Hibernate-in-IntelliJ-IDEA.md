@@ -35,16 +35,16 @@ Use the previous project [Spring MVC example](https://github.com/vivlai/SpringMV
 ### 2.1 Configure hibernate
 In `File` -> `Project Structure` -> `Modules` -> `Add` -> `Hibernate`:
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate1.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate1.png)
 
 Add `hibernate.cfg.xml`:
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate2.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate2.png)
 
 ### 2.2 Connect to mysql
 Next, we need to connect to database (Now we use mysql for example, you can use what database you want). `View` -> `Tool Windows` -> `Database` -> `Choose Mysql`:
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate3.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate3.png)
 
 Fill your database information. Then click `Apply`. In `Schema` section, choose current schema.
 Maybe, you need to install jdbc in the configuration. Just click install button in this configuration.
@@ -52,14 +52,14 @@ Maybe, you need to install jdbc in the configuration. Just click install button 
 ### 2.3 Generate model and hbm files 
 In `View` -> `Tool Windows` -> `Persistence` -> `Generate Persistence Mapping` -> `By database schema`:
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate4.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate4.png)
 
 Set where the generated code is. I set in the package `org.shen.model`. And choose the data source.
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate5.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate5.png)
 
 Then the files will be generated, and hibernate has been installed in IntelliJ.
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/hibernate6.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/hibernate6.png)
 
 

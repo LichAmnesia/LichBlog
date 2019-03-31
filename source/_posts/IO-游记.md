@@ -80,7 +80,7 @@ Election 2016: The big data showdown - Google I/O 2016：[YouTube地址](https:/
 
 最终整个的输出通过[ Cloud Datalab ](https://cloud.google.com/datalab/)进行可视化。
 
-![BigData](http://7xrh75.com1.z0.glb.clouddn.com/IO-bigdata.png)
+![BigData](http://storage.googleapis.com/lichamnesia.appspot.com/images/IO-bigdata.png)
 
 ### 5.2 Google 的使用 Machine Learning创作有关 Art 的项目
 Machine learning & art - Google I/O 2016: [YouTube地址](https://www.youtube.com/watch?v=egk683bKJYU&index=86&list=PLOU2XLYxmsILe6_eGvDN3GyiodoV3qNSC)
@@ -91,7 +91,7 @@ Machine learning & art - Google I/O 2016: [YouTube地址](https://www.youtube.co
 
 后面还讲了一个工作把所有的 art 图片用 Machine Learning 的方法打 label 并且映射到128位空间，然后再用 t-SNE 的方法做处理和可视化，的确是很有趣。
 
-![machinlearning](http://7xrh75.com1.z0.glb.clouddn.com/IO-machinlearning.png)
+![machinlearning](http://storage.googleapis.com/lichamnesia.appspot.com/images/IO-machinlearning.png)
 
 ### 5.3 Android battery 和 memory 优化
 Android battery and memory optimizations - Google I/O 2016：[YouTube地址](https://www.youtube.com/watch?v=VC2Hlb22mZM&list=PLOU2XLYxmsILe6_eGvDN3GyiodoV3qNSC&index=26)
@@ -99,7 +99,7 @@ Android battery and memory optimizations - Google I/O 2016：[YouTube地址](htt
 这个主要是讲一个 Android 的趋势，还不是在 Android N 上的新特性。新的 Android 上有一部分这个优化的 APIs（e.g. JobScheduler），但是不多，也就是一个还在测试和将要推广的东西。
 
 设计的理念包含三块内容：Reduce，Defer，Coalesce。
-![AndroidOptimization](http://7xrh75.com1.z0.glb.clouddn.com/IO-AndroidOptimization.png)
+![AndroidOptimization](http://storage.googleapis.com/lichamnesia.appspot.com/images/IO-AndroidOptimization.png)
 
 Coalesce过程：讲到一个叫 Doze Timeline 的在手机一关闭屏幕，二静止状态。称为 Marshmallow 的状态，Apps就会No Wakelocks，No Network Access 以及 Jobs/Syncs deferred，Alarm deferred，No GPS/WiFi Scans 等 Services，直到时间线到 maintenance window 才会使得 background activity 恢复，但是过了这个 window 就会回到 Doze 状态，并且随着手机持续不动，Doze 的状态会越来越长。
 

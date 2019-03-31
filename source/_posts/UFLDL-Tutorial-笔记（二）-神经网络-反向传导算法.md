@@ -12,7 +12,7 @@ tags:
 　　
 　　我们使用圆圈来表示神经网络的输入，标上“+1”的圆圈被称为偏置节点，也就是截距项。神经网络最左边的一层叫做输入层，最右的一层叫做输出层（下图中，输出层只有一个节点）。中间所有节点组成的一层叫做隐藏层，因为我们不能在训练样本集中观测到它们的值。同时可以看到，神经网络的例子中有3个输入单元（偏置单元不计在内），3个隐藏单元及一个输出单元。
 
-　　　　　　　　![神经网络](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_400px-Network331.png)
+　　　　　　　　![神经网络](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_400px-Network331.png)
 
 　　这里使用的激活函数$f(\cdot)$是sigmoid函数。
 

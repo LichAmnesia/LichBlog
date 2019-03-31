@@ -48,7 +48,7 @@ $$
 
 　　下图是一个AutoEncoder的三层模型，Input layer，Hidden layer，和Output layer。其中$W^{*} = W^T$，因为使用tied weight。
 
-![AutoEncoder示意图](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_AutoEncoder.png)
+![AutoEncoder示意图](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_AutoEncoder.png)
 
 　　如果是实数值作为输入，我们要优化的目标函数是：
 $$
@@ -74,7 +74,7 @@ $$
 　　
 　　下图是形成的网络结构：
 　　
-![Denoising AutoEncoder](http://7xrh75.com1.z0.glb.clouddn.com/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-denoiseAutoEncoder.png)
+![Denoising AutoEncoder](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-denoiseAutoEncoder.png)
 
 　　Denoising AutoEncoder是AutoEncoder的一个变种，与AutoEncoder不同的是，Denoising AutoEncoder在输入的过程中加入了噪声信息，从而让AutoEncoder能够学习这种噪声。直观可见就是新的输入层有些值变成0了。
 　　

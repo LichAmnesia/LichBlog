@@ -70,7 +70,7 @@ tags:
 
 # 3. ZigBee 协议体系
 　　ZigBee协议栈标准采用的OSI分层结构，其中物理层(PHY)、媒体接入层(MAC)和链路层(LLC)由IEEE802.15.4工作组制定，而网络层和应用层则由ZigBee联盟制定。
-![ZigBee体系结构图](http://7xrh75.com1.z0.glb.clouddn.com/ZigeBee_5.jpg)
+![ZigBee体系结构图](http://storage.googleapis.com/lichamnesia.appspot.com/images/ZigeBee_5.jpg)
 　　 ZigBee的协议栈中，结构包含一系列的层，每一层通过使用下层提供的服务完成自己的功能并向上层提供服务。层与层之间通过服务访问点SAP进行连接。
 
 ### 3.1 物理层
@@ -85,7 +85,7 @@ tags:
 ### 3.3 网络层
 
 　　 ZigBee的网络层主要考虑采用基于Ad hoc技术的网络协议,使其在具有通用的网络层功能基础上能尽量的减小功耗、减少成本,并具有高度动态的拓扑结构和自组织、自维护的功能。网络层有二种帧类型:数据帧和命令帧,其一般结构如为了降低系统成本,ZigBee网络中定义了两种类型的设备:一种是全功能设备FFD( Full Function Device, FFD) 称为主设备,它承担了网络协调者的功能,可与网络中任何类型的设备通信,它亦可作为网络中的路由设备;另一种是简化功能设备RFD(Reduced Function Device,RFD)称为从设备,它不能作为网络协调者,只能与主设备通信。ZigBee主要采用了3种组网方式:星型网(Star)、网状型网(Mesh)和簇型网(Cluster tree), 如下图所示：
-![ZigBee网络结构](http://7xrh75.com1.z0.glb.clouddn.com/ZigeBee_QQ%E5%9B%BE%E7%89%8720160318175449.png)
+![ZigBee网络结构](http://storage.googleapis.com/lichamnesia.appspot.com/images/ZigeBee_QQ%E5%9B%BE%E7%89%8720160318175449.png)
 
 
 
@@ -114,7 +114,7 @@ $$
 
 ### 4.2 基本路由算法
 　　 ZigBee网络层采用一种基本的路由算法, 该算法的主要思想是先对接收的数据帧进行判断, 判断数据帧的来源。然后, 分解出数据帧中的目的地址, 根据目的地址, 采用相应的机制传送数据帧,具体如下图所示：
-![基本路由算法](http://7xrh75.com1.z0.glb.clouddn.com/ZigeBee_%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95.png)
+![基本路由算法](http://storage.googleapis.com/lichamnesia.appspot.com/images/ZigeBee_%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95.png)
 
 ### 4.3 Cluster-Tree 路由算法
 　　 ZigBee的树形拓扑结构中，对于每个加入网络的节点，都有一个父节点与之对应，一个父节点有一个或者多个子节点，而一个子节点只能对应一个父节点，按照这样的排列形成一颗树，如果路由沿着这棵树进行，则就是Cluster-Tree算法。

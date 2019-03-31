@@ -19,7 +19,7 @@ otter是基于数据库增量日志解析，准实时同步到本机房或异地
  + node节点将同步状态反馈到manager上
 
 - 基于zookeeper，解决分布式状态调度的，允许多node节点之间协同工作. 
-![原理](http://7xrh75.com1.z0.glb.clouddn.com/otter_canalotter.jpg)
+![原理](http://storage.googleapis.com/lichamnesia.appspot.com/images/otter_canalotter.jpg)
 
 otter的wiki页面：[otter](https://github.com/alibaba/otter)
 wiki上的安装以及配置教程很详细。运维方面主要考虑的要在需要同步的数据库节点上装上Node。在管理节点上装manager。并且还需要事先先装好zookeeper。

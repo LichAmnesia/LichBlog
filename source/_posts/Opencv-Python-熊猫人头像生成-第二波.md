@@ -13,7 +13,7 @@ tags:
 
 　　熊猫人原型如下：
 　　
-![熊猫人](http://7xrh75.com1.z0.glb.clouddn.com/python_base.jpg)
+![熊猫人](http://storage.googleapis.com/lichamnesia.appspot.com/images/python_base.jpg)
 　　
 　　写出来的程序放在[Github](https://github.com/LichAmnesia/Pandamen-Generator)了。
 　　说一下修改的部分。
@@ -51,7 +51,7 @@ def dodge(A, B):
 
 　　这是效果图：
 
-![淡化效果](http://7xrh75.com1.z0.glb.clouddn.com/%E7%86%8A%E7%8C%AB%E4%BA%BA-lyf%E6%B7%A1%E5%8C%96%E6%95%88%E6%9E%9C.png)
+![淡化效果](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%86%8A%E7%8C%AB%E4%BA%BA-lyf%E6%B7%A1%E5%8C%96%E6%95%88%E6%9E%9C.png)
 
 # 4. 二值化
 　　输入是颜色减淡之后的图像，调整Canny算法的阈值，得到边缘信息，然后根据人脸的比例，去掉不相关部分（下巴，脸部边缘，头发之类信息）。
@@ -65,7 +65,7 @@ result = cv2.adaptiveThreshold(result,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THR
 
 # 5. 最终结果
 
-![熊猫人](http://7xrh75.com1.z0.glb.clouddn.com/%E7%86%8A%E7%8C%AB%E4%BA%BA-merge_output_lyf_1.jpg)
+![熊猫人](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E7%86%8A%E7%8C%AB%E4%BA%BA-merge_output_lyf_1.jpg)
 
 
 # 参考文献

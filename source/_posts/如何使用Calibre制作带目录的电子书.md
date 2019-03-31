@@ -90,14 +90,14 @@ tags:
 
 选择这本书，然后按选项栏里的`转换书籍`。可以看到最左边是书籍本身格式`txt`,把右边格式输出格式改成`mobi`。当然你可以修改图书基本属性，以及封面等。如图所示：
 
-![图](http://7xrh75.com1.z0.glb.clouddn.com/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A61.PNG)
+![图](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A61.PNG)
 
 然后选择`内容目录`，调整为如图所示。主要是一级目录和二级目录表达式：`//h:h1`。这也是为了对应之前我们所说的`#`和`##`。注意上面的最大章节数可能需要修改。完成后点击确定。
-![图](http://7xrh75.com1.z0.glb.clouddn.com/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A62.PNG)
+![图](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A62.PNG)
 
 # 成书
 现在就可以打开书籍，发现目录已经生成。
-![图](http://7xrh75.com1.z0.glb.clouddn.com/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A63.PNG)
+![图](http://storage.googleapis.com/lichamnesia.appspot.com/images/%E8%87%AA%E5%88%B6%E7%94%B5%E5%AD%90%E4%B9%A63.PNG)
 
 ---
 

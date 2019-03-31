@@ -8,7 +8,7 @@ tags:
 ### 1. 位置
 店的位置在，2131 7th Ave, Seattle, WA。位于Amazon新的办公楼day 1的楼下。
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/amazon-jobs-go-banner.jpg)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/amazon-jobs-go-banner.jpg)
 
 ### 2. 进店准备
 目前只有Amazon的员工通过申请才能够获取资格。需要提前下一个Amazon Go的app与你的Amazon账号进行绑定。基本和教程上面一致，只需要进店刷码就行。

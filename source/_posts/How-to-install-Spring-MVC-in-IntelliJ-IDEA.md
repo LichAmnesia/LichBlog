@@ -31,13 +31,13 @@ This is for **Mac**, linux is similar.
 Download [Spring MVC example](https://github.com/vivlai/SpringMVC) code. Unzip the code to a folder and use IntelliJ to open the code folder.
 
 Click `Edit Configuration` in the picture below.
-![](http://7xrh75.com1.z0.glb.clouddn.com/SpringMVC1.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/SpringMVC1.png)
 
 If you have installed the `Tomcat`, your configuration should be the same as below. Ohterwise you should install `Tomcat` firstly. And if you have installed `Tomcat`, you need to choose the `Tomcat` path. And then run. In my computer, I use `/Users/lich/Applications/tomcat` for the `Tomcat` Home.
-![](http://7xrh75.com1.z0.glb.clouddn.com/SpringMVC2.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/SpringMVC2.png)
 
 After you run your program, you can see the following. It meens Spring MVC has been installed in your machine.
-![](http://7xrh75.com1.z0.glb.clouddn.com/SpringMVC3.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/SpringMVC3.png)
 
 ### 3.2 When you don't have the permission to run the project
 When you run the project, it says you don't have permission. You can try the following commands.

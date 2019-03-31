@@ -10,7 +10,7 @@ toc: true
 ## 0. 前言
 文本主要介绍使用`Three.js`导入 Objects 并模仿 [paperplanes](https://paperplanes.world/) 设计一个网页应用。
 
-![](http://7xrh75.com1.z0.glb.clouddn.com/threejs-paperplanes.png)
+![](http://storage.googleapis.com/lichamnesia.appspot.com/images/threejs-paperplanes.png)
 
 [Demo - Paper planes](http://alwa.info/projects/paperplane)。 应用数据部分放在 `firebase database` 里面，可能需要翻墙才能访问。
 
@@ -32,7 +32,7 @@ toc: true
 ## 2. 基本操作
 导入 `Three.js` 操作，以及把 `Three.js` 的 `canvas` 加到整个网页里面。然后初始化相机位置。`Three.js` 有三个基本元素，`scene` `camera` 和 `renderer`。
 
-```
+```javascript
 // -------------
 // Add three js
 // Three basic elements to add, scene, camera, renderer
@@ -82,7 +82,7 @@ init();
 
 ```
 然后加上对鼠标操控以及光线。
-```
+```javascript
 // Controls for mouse
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 // controls.addEventListener('change', function() { renderer.render(scene, camera); });
@@ -114,7 +114,7 @@ shadowMaterial.opacity = 0.5;
 
 ```
 最后的 render 方法和 animate 方法，需要运行  `animate()`。。
-```
+```javascript
 // Render the scene/camera combination
 function render() {
     rotateEarth();
@@ -138,7 +138,7 @@ function animate() {
 
 ## 3. 导入 object
 使用 `ObjectLoader()` 获取 obj 的信息。
-```
+```javascript
 var earth;
 
 function initEarth() {
@@ -192,7 +192,7 @@ initEarth();
 
 直接运行相应函数就可以得到一个 curve，然后根据时间 t 获得所在位置以及正方向。
 
-```
+```javascript
 // Create the path for use.
 var spline = [],
     line, spline_num = 2;
@@ -227,7 +227,7 @@ function createPath() {
 createPath();
 ```
 控制飞机的朝向，以及每次 t 所在的位置的函数。
-```
+```javascript
 var scale_spine = 0.005;
 // plane info 
 var arr_length = [0, 0];

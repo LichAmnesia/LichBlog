@@ -16,7 +16,7 @@ iBATIS 通过 SQL Map 将 Java 对象映射成 SQL 语句和将结果集再转�
 2. 通过反射打通 Java 对象与数据库参数交互之间相互转化关系。
 
 # 3. Spring 调用 iBATIS 执行一个 Statement 的时序图
-![此处输入图片的描述](http://7xrh75.com1.z0.glb.clouddn.com/ibatis_ibatis%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg)
+![此处输入图片的描述](http://storage.googleapis.com/lichamnesia.appspot.com/images/ibatis_ibatis%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg)
 
 # 4. ibatis主要使用的一个Demo
 http://www.cnblogs.com/ycxyyzw/archive/2012/10/13/2722567.html
