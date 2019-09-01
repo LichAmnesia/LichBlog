@@ -19,7 +19,7 @@ mountain_time = timezone("America/Denver")
 
 # Instantiates a client
 # Please set GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application. 
-credentials = '/Users/shehuang/Google Drive/Stock/lichamnesia-gcp-stockproject.json'
+credentials = '/Users/lich/Google Drive/Stock/lichamnesia-gcp-stockproject.json'
 storage_client = storage.Client.from_service_account_json(credentials)
 bucket_name = 'www.alwa.info'
 bucket = storage_client.get_bucket(bucket_name)
