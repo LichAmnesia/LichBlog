@@ -1,5 +1,5 @@
 ---
-title: '14级集训队讨论会2--Stack&Queue'
+title: '14级集训队讨论会2--Stack and Queue'
 tags:
   - 集训队
 date: 2015-04-13 11:13:42

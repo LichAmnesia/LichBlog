@@ -91,6 +91,20 @@ pyenv deactivate #退出虚拟环境，回到系统环境
 pip -V
 ```
 
+## 5. 使用多个 kernel 跑在不同的环境于 jupyterlab
+
+进入虚拟环境
+
+```
+pyenv activate py3.8
+```
+```
+pip install --user ipykernel
+python -m ipykernel install --user --name=py3.8
+```
+
+然后 jupyterlab 里面就会多一个 py3.8 kernal 这个就是那个虚拟环境
+
 ## 参考
 1. https://github.com/pyenv/pyenv-installer
 
