@@ -5,16 +5,16 @@
 # Site
 title: Lich_Amnesia's Blog
 subtitle:
-description:
+description: 休言万事转头空，未转头时皆梦
 author: Lich_Amnesia
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://alwa.info
+url: https://alwa.info
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:title.html
 permalink_defaults:
 
 # Directory
