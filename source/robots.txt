@@ -1,0 +1,29 @@
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /projects/
+
+Allow: /2010/
+Allow: /2011/
+Allow: /2012/
+Allow: /2013/
+Allow: /2014/
+Allow: /2015/
+Allow: /2016/
+Allow: /2017/
+Allow: /2018/
+Allow: /2019/
+Allow: /2020/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://www.alwa.info/sitemap.xml
