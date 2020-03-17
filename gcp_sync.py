@@ -24,8 +24,16 @@ storage_client = storage.Client.from_service_account_json(credentials)
 bucket_name = 'www.alwa.info'
 bucket = storage_client.get_bucket(bucket_name)
 
-IGNORE_LIST = ['.DS_Store']
-
+IGNORE_LIST = [
+    '.DS_Store',
+    # '2013',
+    # '2014',
+    # '2015',
+    # '2016',
+    # '2017',
+    # '2018',
+    # '2019',
+]
 
 def pull_job():
     print('The time is: %s' % datetime.now())
