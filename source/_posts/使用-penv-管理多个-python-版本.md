@@ -27,7 +27,7 @@ curl https://pyenv.run | bash
 # Load pyenv automatically by adding
 # the following to ~/.bashrc:
 
-export PATH="/usr/local/google/home/shenhuang/.pyenv/bin:$PATH"
+export PATH="/Users/xxx/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
