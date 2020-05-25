@@ -30,6 +30,9 @@ curl https://pyenv.run | bash
 export PATH="/Users/xxx/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# pyenv new version
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 ```
 
 
