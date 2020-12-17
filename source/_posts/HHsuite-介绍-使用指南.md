@@ -5,11 +5,15 @@ tags:
     - Bioinformatics
 ---
 
-这是我在使用HHsuite工具包时的一些记录。
+这是我在使用 HHsuite 工具包时的一些记录。
+
+**Update on 2020/12/16:**
+最近看到一些朋友访问到我这篇老文，自己已经不做 Bioinformatics 好多年，当时调试这些工具一直苦于没有任何教程，完全靠师兄只言片语的指导。自己鼓捣了很久才把工具调通，深感科研路上艰辛。希望这篇文章能够帮到你 Bioinformatics 的科研。
+
 <!-- more -->
 
 # 1. 介绍
-HH-suite是一个用来高精度序列搜索和对齐匹配的开源工具包。主要包括HHsearch和HHblits。他们都是基于HMMs的成对比较。
+HH-suite 是一个用来高精度序列搜索和对齐匹配的开源工具包。主要包括 HHsearch 和 HHblits。他们都是基于HMMs的成对比较。
 
 
 # 2. 配置
@@ -23,6 +27,7 @@ $$
 Memory req. = query length × max db seq length × num threads × (4 (SSE) or 8 (AVX2))B + \\\\
 query length × max db seq length × num threads × 8B +1GB
 $$
+
 ### 2.2 使用源代码安装
 
 ```
@@ -73,21 +78,21 @@ make: *** [all] 错误 2
 
 ### 2.3 如果没装Cmake请看
 下载源码
-```
+```bash
 wget https://cmake.org/files/v3.5/cmake-3.5.0.tar.gz
 tar -xzvf cmake-3.5.0.tar.gz
 ```
 
 
 解压进入目录
-```
+```bash
 ./bootstrap
 make      
 sudo make install
 ```
 这样貌似装出来的要使用你cmake的目录直接打开才行。
 ### 2.4 HHsuite Database 设置
-Databases可以在这里下载：http://wwwuser.gwdg.de/~compbiol/data/hhsuite/databases/hhsuite_dbs/。
+Databases可以在这里下载：http://wwwuser.gwdg.de/~compbiol/data/hhsuite/databases/hhsuite_dbs/
 选择适合你的数据库文件进行下载。我使用了 uniprot20。
 
 + **uniprot20** based on UniProt db from EBI/SIB/PIR, clustered to 20 % seq. identity
@@ -108,7 +113,7 @@ Databases可以在这里下载：http://wwwuser.gwdg.de/~compbiol/data/hhsuite/d
     The packed files <dbname>_cs219.ffdata, <dbname>_hhm.ffdata and <dbname>_a3m.ffdata contain simply the concatenated A3M MSAs and HHMs, respectively, with a \0 character at the beginning of each file. They are therefore human-readable and are parsable for specific MSAs or models using tools such as grep or search functions in text editors (which however should be able to ignore the \0 character). The .ffindex files contain indices to provide fast access to these packed files.
     
 下载命令：
-```
+```bash
 cd ~/lich/ % change to HHsuite directory
 mkdir databases
 cd databases
@@ -119,7 +124,7 @@ tar -xzvf uniprot20_2016_02.tgz
 
 ### 2.5 无法源码安装请看，直接使用编译好的程序
 下载编译好的程序
-```
+```bash
 wget https://github.com/soedinglab/hh-suite/releases/download/v3.0-beta.1/hhsuite-3.0-beta.1-Linux.tar.gz
 tar -zxvf hhsuite-3.0-beta.1-Linux.tar.gz 
 ```
@@ -128,30 +133,31 @@ tar -zxvf hhsuite-3.0-beta.1-Linux.tar.gz
 **设置，每次开机运行都需要**
 否则无法运行
 把HHsuite和脚本放入搜索PATH里面
-```
+```bash
 export HHLIB=${INSTALL_BASE_DIR}
 export PATH=$PATH:$HHLIB/bin:$HHLIB/scripts
 ```
 我的是
-```
+```bash
 export HHLIB=/usr/local/hhsuite
 export PATH=$PATH:$HHLIB/bin:$HHLIB/scripts
 ```
 如果是直接下载的编译好的文件安装的话
-```
+```bash
 export HHLIB=/home/fishteam/lich/hhsuite-3.0.1-Linux
 export PATH=$PATH:$HHLIB/bin:$HHLIB/scripts
 ```
 
 也可以修改.bashrc文件，这样就不用每次都设置了。最后一行是默认数据库文件地址
-```
+
+```bash
 export HHLIB=/usr/local/
 PATH=$PATH:$HHLIB/bin>:$HHLIB/scripts
 alias hhblits=’hhblits -d <path_to/uniprot20>’
 ```
 
 ---
-**数据库建立：Update in 2016.03.22**
+**数据库建立：Update on 2016.03.22**
 # 3. 建立自己的数据库
 确认好你uniprot20的数据库的path，以及你上传好你自己的fas文件，文件格式是fasta格式的序列全都在一起。
 首先是把这个文件分割开来
@@ -166,7 +172,8 @@ ffindex_from_fasta -s bdd_fas.ff{data,index} bdd.fas
 ```
 hhblits_omp -d <path_to/uniprot20> -i <db>_fas -o <db>_a3m_wo_ss -n 2 -cpu <number_threads>
 ```
-<path_to/uniprot20>我是 /home/fishteam/lich/uniprot20_2016_02
+
+这里要填写具体你自己的 path。`<path_to/uniprot20>` 我是 `/home/fishteam/lich/uniprot20_2016_02`。
 
 ```
 hhblits_omp -d /home/fishteam/lich/uniprot20_2016_02/uniprot20_2016_02 -i bdd_fas -o bdd_a3m_wo_ss -n 3 -cpu 18
@@ -183,10 +190,10 @@ mpirun -np 20 ffindex_apply_mpi bdd_a3m_wo_ss.ff{data,index} -i bdd_a3m.ffindex 
 
 ```
 mpirun -np 16 ffindex_apply_mpi bdd_a3m_wo_ss.ff{data,index} -i bdd_hhm.ffindex -d bdd_hhm.ffindex -- hhmake -i stdin -o stdout -v 0
-···
+```
 
 
 ----
 　
 
-因为我们是朋友，所以你可以使用我的文字，但请注明出处：http://alwa.info
+因为我们是朋友，所以你可以使用我的文字，但请注明出处：https://alwa.info
