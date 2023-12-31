@@ -18,6 +18,10 @@ Allow: /2017/
 Allow: /2018/
 Allow: /2019/
 Allow: /2020/
+Allow: /2021/
+Allow: /2022/
+Allow: /2023/
+Allow: /2024/
 
 Disallow: /vendors/
 Disallow: /js/
