@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>test</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="05d25782-3b7f-4f4d-9509-d65a5c631145" class="page sans"><header><h1 class="page-title">test</h1></header><div class="page-body"><p id="c2bd8547-eb57-470c-8d09-1fc13c8213d3" class="">
+</p><p id="08321202-cd2c-47d5-8860-fe1c962c8423" class="">顾学长真的好温柔啊。</p><p id="0246e25f-9192-4e09-bcb6-086df52b753b" class="">巧克力软绵细腻的口感在口腔里蔓延开，陶软看着顾之洲离开的背影，心里有点说不出的泛甜，又有点说不出的难过。</p><p id="590b1d30-a2f4-46b9-8e0c-7e3daa0160a6" class="">要是顾之洲没有女朋友就好了。</p><p id="73bffa4f-60e0-43f9-9c21-5089a894e074" class="">那样她一定鼓足勇气追一追顾之洲。</p><p id="e483d323-f40f-4501-b4f9-7548e227015c" class="">不过现在不是想这些的时候，还是得查一查那张照片到底是怎么回事。</p><p id="c8e006c0-d8c9-48d3-bc43-d9d11ff9150e" class="">陶软去了校医院，找到那天给自己看病的女医生问了细节，结果就是什么有用的线索都没有。</p><p id="4eb9de04-c34f-410a-aa38-00309ca759ab" class="">“怎么了，是发生了什么事吗？”</p><p id="b683e293-1f94-4562-805e-c35e02c48762" class="">“没……”</p><p id="267ec7c8-c127-45a6-9869-dd9c2e49869f" class="">被偷拍了私密照这种事，陶软不想跟别人说。</p><p id="d8f5cea7-7a0b-419f-a384-88f9f084b239" class="">最后陶软还是无精打采地离开了校医院。</p><p id="17ff9bfb-cc02-4fe2-8c8e-7692ac4b36e9" class="">到今天为止那样的色情消息没有再发来，可陶软还是，烦闷不已。</p><p id="2b3b38f7-16e8-4219-a8ea-38ee982884e8" class="">她该怎么办呢？</p><p id="3f0b0afe-25c6-4da3-93f1-d39e091513f9" class="">带着这种情绪，后面的课陶软也没有上好，中午随便吃了午饭以后她就回了寝室，还趴在桌子上睡着了。</p><p id="33d61593-88bc-4c3a-8585-0d1953649155" class="">……</p><p id="30e71dd3-ae02-4e52-adc1-a9aafd67dec3" class="">醒来时陶软发现自己正坐在教室。</p><p id="64858362-6778-4432-921f-881320ef625e" class="">教室布置不像是她现在的大学教室，反而像是高中，可奇怪的是，教室里所有同学的脸都像是蒙了一层影影绰绰的白雾，她没法看清其中任何一个人的长相。</p><p id="28417758-4f82-4617-8ca0-7097db7926ca" class="">怎么回事？</p><p id="772756c2-ab67-4d0c-8ec9-8c799e23fb9a" class="">陶软咬了一口自己的指尖。</p><p id="25053c9e-e276-45fa-b0bd-02e4d203e5b7" class="">是疼的。</p><p id="8c42eb24-0bfb-4be6-94fe-534bd7989b5f" class="">又是那种有真实体验的梦吗？</p><p id="7a007369-2f21-45fb-8418-54a2bfbff0dc" class="">陶软忽然就害怕起来，她想要逃开，可不知道为什么她的身体就像是完全粘在了座椅上一样，根本动弹不了。</p><p id="813f9bb7-2029-46a1-bdf1-50bbb47b88cf" class="">这到底是怎么回事？</p><p id="96ca3e2a-5fdc-4e5d-b84b-a26d442052ff" class="">就在陶软惊恐害怕时，教室的门被打开了。</p><p id="1dbb7067-d928-4184-959d-b9c794d90282" class="">看着那熟悉的身形，陶软心里一松。</p><p id="aaca5ea0-cab5-4b47-920b-dc10eb4fc66f" class="">是顾之洲吗？</p><p id="3a15e57a-03f6-4def-ae66-5f01b208c3f7" class="">不对……这人的脸上也蒙着层影影绰绰的白雾，根本看不出那是谁。</p><p id="f1c8a872-3954-4a35-8583-142b603786fa" class="">太可怕了。</p><p id="a0ed5d49-ecba-4eee-9514-4444c436fc09" class="">这场景完全像是聊斋。</p><p id="7adfd9d7-8022-4138-b351-a56cd85d8299" class="">“今天我们来上生理课。”</p><p id="d4913435-026e-4bf4-a775-e7235f452cd2" class="">那道疏狂霸道的低沉男声又响起来了，陶软被吓得一抖。</p><p id="0d7c15a1-5bad-4c22-a784-7f4bac8de8f4" class="">不要……</p><p id="c41e5851-32c0-41a2-9cc9-8bdbcb230dbb" class="">她不要……</p><p id="621c2dac-22d3-4ee7-886b-0fd2db818184" class="">难不成她今天又要在这里被强奸了吗？</p><p id="2685b928-44b0-4328-ab06-c9cb60da8004" class="">“现在，老师需要有个人到讲台上来配合我，请问谁可以来？”</p><p id="51235feb-6652-4421-9bcd-3efb829f8301" class="">周围的推荐声此起彼伏：“我看不如陶软吧。”</p><p id="985866fa-ff3f-4937-bb8e-39ea47dc8dfa" class="">“对，就陶软吧。”</p><p id="e19dd6a1-ca13-4966-bb5c-2ecd5ceeca80" class="">“陶软可以！就陶软了！”</p><p id="67a5a422-701b-4ef7-9f91-50cb23efd425" class="">不要……</p><p id="757b242c-2b97-41df-bec4-660ef08fe1e5" class="">陶软怕的眼泪都掉下来了，可讲台上的声音还是落了下来：“那么陶软同学，请你上来吧。”</p><p id="229e6b94-7ce3-4752-b573-f85de52e2745" class="">陶软只觉得自己的身体完全不由自己支配了，她浑浑噩噩的走上了讲台，又被那所谓的老师抱到了讲桌上。</p><p id="14345c9d-f932-43c9-a77b-221d6ef86a41" class="">“你到底是谁？”陶软哭着问。</p><p id="1666b7ad-4efc-49bc-b113-f40947024957" class="">“我当然是你的老师，不然还能是谁？”说着那人就扒下了她的裤子，还把她的两腿大分，对着讲台下面的同学。</p><p id="c3dacc0c-e7dc-4ef5-a037-a24c7c6a67ef" class="">一只手覆盖在了她的软嫩花唇上。</p><p id="d6d8f84c-9aed-45a4-b176-06adbedfbc4b" class="">男人的声音从身后响起来：“就是这个地方，叫做逼。”</p><p id="9dfa6bd5-53c5-4f27-9b44-3194cb5d3cca" class="">陶软被摸的一抖。</p><p id="903764be-d491-435f-aef5-57cd80b6bf3b" class="">男人就又轻笑了起来：“陶软同学好敏感，像陶软同学这么敏感，这么骚浪的逼，也可以叫骚逼。”</p><p id="3a448bf7-26ee-4578-b095-893ebf5b8ed2" class="">底下的男同学发出喟叹：“她的骚逼好美啊，老师，我可以上去摸摸吗？”</p><p id="28e06e2f-68aa-447b-820c-063d094f88da" class="">“当然可以。”</p><p id="f767d2f8-be64-4db4-8dd5-5d049fed77f2" class="">说着男人就把陶软用小儿把尿的姿势抱了起来，还走到了讲台上，让她两腿大分地对着全部同学。</p><p id="225de237-b7df-4047-a72d-5a86ec370985" class="">“不要……”</p><p id="1c1cbe8f-8d4d-4a70-b6b6-713f826063f0" class="">就算看不清那些同学的脸，陶软也还是能感觉到有无数道目光落在自己身上，巨大的羞耻感让她想要挣扎，可同时她身子又软绵无力，完全挣扎不了。</p><p id="29df9dd6-3862-4247-8bb7-6b09b34c0f07" class="">“不要……”</p><p id="d4ee511b-563e-42d3-a4d9-51d08baf54f6" class="">陶软又哭了，可她的哭喊和拒绝无济于事，那男同学的手指还是放在了她的花穴上。</p><p id="8911b538-6123-43ec-af76-71b79051e0eb" class="">“好软，好嫩啊。”男同学不由得感慨。</p><p id="dc73abd9-a16f-4d1a-a068-a9bc25b29e1d" class="">“你碰的那个地方叫做阴唇，女人的骚逼上有两个阴唇，一个是大阴唇，一个是小阴唇。”</p><p id="7325f9f1-467e-4905-9ac6-eacb62966c86" class="">“原来是这样。”</p><p id="89883e81-d395-4a76-841c-acc705fc2a99" class="">“你还可以用两只手，把陶软同学的大阴唇往两边拉扯。”</p><p id="8f94a729-15fa-4050-a80e-f9f580de754d" class="">“不……别、啊～”</p><p id="0339728a-fb3a-40ff-a6ff-2de2494a60bf" class="">又一个男同学凑过来，问老师：“里面的就是小阴唇吗？”</p><p id="09cac7ed-eb4c-469f-9fef-142ef7efe012" class="">“是呢，你也可以用手指碰一碰，如果上下刮弄的话，陶软同学还会觉得很爽很舒服呢。”</p><p id="e2b243e0-46de-48e8-950d-751e78f5f18f" class="">“不要……”</p><p id="7b141d39-5180-444a-95e6-754d378d37f2" class="">陶软哭着拒绝，可还是没法阻挡放到自己小阴唇上刮弄的另一只手。</p><p id="6c34d50d-448c-4829-8cf8-8d8f4115b731" class="">“好厉害！老师！那底下这粉粉嫩嫩的小口是什么，它竟然还会流水！”</p><p id="ec473479-01de-4c30-83c2-6083ef3963ac" class="">“那是陶软同学的骚穴，里头流出来的水叫骚汁，如果你用舌头舔一舔，会发现那骚汁是甜的。”</p><p id="70e9dd38-e587-4eda-baf8-5c73bb039e0c" class="">“真的吗？”</p><p id="74123213-a63e-4102-94a0-d1fb1137a67d" class="">“等下我把陶软同学放在课桌上，你可以亲自舔一舔，尝一尝。”</p><p id="2d45c9c3-8e34-400f-97d7-fddcc815abb9" class="">“太好了，那老师，那你快把陶软同学放下。”</p><p id="115942ba-f113-4ff4-b301-8555527dc95c" class="">男人很快就把陶软放到了课桌上，陶软抓着他的胳膊求他：“不要……别这样对我……”</p><p id="05be70d3-28c5-472e-8ec2-7f4bf284678c" class="">男人却笑了笑亲了亲脸颊，哄道：“别怕，这次不弄疼你，会很舒服的。”</p><p id="7c0ae6be-cffd-4e49-b4d6-f32981224eef" class="">男人没有骗她。</p><p id="e8ff3a12-21f7-45ce-b7ef-16ceb733bf9a" class="">班里的男同学一个接一个的过来舔她的小穴，有的莽撞，有的温柔，却无一例外，都让陶软很舒服。</p><p id="c9957c5e-7b55-4bb3-86dd-0180c51fea2d" class="">陶软心理上想要抵抗，可身体却不由得沉沦，甚至连唇边也不自觉地泄出了几丝哼声：“嗯……啊～”</p><p id="7e694547-c2b4-4938-a935-a17290bd7473" class="">阴蒂被身后的男人揉着，腿也被身后的男人掰开着，小穴里的水儿汩汩地往外涌，又被饥渴的少年们轮番舔走。</p><p id="bdd68158-226a-4f2c-884d-89d6e909e1c1" class="">“是不是没骗你？”男人又轻笑着亲了亲她的脸颊。</p><p id="382af695-edb5-460e-8178-9ea1ca991d24" class="">这时候一个男同学却道：“老师，陶软同学这骚穴口正在一收一缩呢。”</p><p id="d5457ff2-df49-44ba-9648-9e19ee374fee" class="">“哦，”男人语调平稳：“这说明陶软同学的小骚穴欠操了。”</p><p id="7bddd529-dd37-458e-b5cb-e43d8cf1b69c" class="">“欠操？”</p><p id="a6f8ae21-64ec-4225-914e-34fbd2e51de9" class="">“把男人的阴茎插到骚穴里，就叫操，陶软同学的骚穴想要被男人的阴茎插，就叫欠操。”</p><p id="a2d309b0-e04a-4d81-a7b3-26908b2327e0" class="">男同学的声音兴奋了：“老师，那我可以用阴茎插她的骚穴吗？”</p><p id="032e53a9-f294-4967-b742-fd65c96839d0" class="">“当然不可以，”身后的男人把拉链解开，将滚烫的巨物抵在陶软穴口，又是一声轻笑：“陶软同学的处子穴，当然是先由老师来开苞。”</p><p id="94c3f808-e84e-40c9-94a2-b6b93ad58aa8" class="">“软软不乖，让我等了好久。”</p><p id="79486ce3-c863-417c-8807-9df63f257362" class="">还是那间教室，还是那个男人的声音，甚至陶软也还是那个被扒了裤子，双腿大分着面向同学们的姿势。</p><p id="fff2af9c-5346-42b9-a7ee-89541b8d8450" class="">“你放开我……”</p><p id="3dd927cf-a195-4410-916b-b8622c15ac55" class="">“中午好不容易才给你舔开的小穴，现在又合上了，”男人把一根手指从后头插入陶软艰涩的小穴，问她：“软软，你说我该怎么惩罚你才好？”</p><p id="2106c682-eb21-4803-8be9-12dd8d7da541" class="">面对梦里的欺辱，陶软一直浑浑噩噩的承受，但是在见了顾之洲以后，她却突然不想再这样浑浑噩噩下去了。</p><p id="8d103b6a-73bd-4709-a4fa-db9cdde847a5" class="">“你放开我，你放开……”</p><p id="413efa9c-2944-42df-a735-94e3e4ee3212" class="">陶软剧烈挣扎，边挣扎边哭，可男人却突然把她调转了个方向，抱了个满怀。</p><p id="5e933161-bebb-410f-8529-ab13bc07b610" class="">“软软是喜欢被我强奸吗？本来老师想着你是第一次，还想温柔地操你，现在看来恐怕是不行了。”</p><p id="fcbbfa3c-5622-4b5b-8a38-42d6248f8ea9" class="">“你……”</p><p id="66e54e6f-c6e2-4f23-9e4a-237d4ed7be6e" class="">男人的巨物在干涩的穴口试探，仿佛就要那样直接插入进去。</p><p id="f9227857-ce73-4b52-a476-8b418f03c4c1" class="">而陶软只是愣愣地盯着那颗淡色小痣。</p><p id="5c6d5baf-d26c-4af5-8819-60d914ae91ea" class="">她不会记错。</p><p id="3ed4c345-3ae8-4f9f-9c8d-5503bc69682e" class="">就是这样的大小，就是这样的位置，就是这样一模一样的痣，她在不久之前还看到过。</p><p id="316eaddf-187d-4f80-bf08-0f6612546974" class="">那时是在顾之洲身上。</p><p id="320b600d-bcda-43a5-8260-067702480828" class="">真的会有这样巧的事吗？</p><p id="948f22c1-0af5-4e3e-82b5-14afe6d78f3c" class="">就在陶软发呆的时候，那饱满的龟头狠戳了进来，直接插入了一半。</p><p id="532e743e-ce51-458c-80aa-a21ef8d307ce" class="">“疼……”</p><p id="e03ae147-049a-449e-b995-4b3a42d977fd" class="">陶软被疼的眼泪都下来了，她抓紧了男人的衣襟，又下意识抬起眼。</p><p id="7dedabbe-5ef7-49b9-a35f-ce6b326844a9" class="">看不清。</p><p id="90f8160a-2ec7-498a-952b-f26cc593c0da" class="">她还是看不清男人的脸。</p><p id="836faba0-6c28-479b-b163-e832c3436827" class="">就像是被某种神秘力量控制，明明近在眼前，她却无法看清男人的轮廓与眉目。</p><p id="34755ad0-7f35-4ff0-afbf-fa712e7aeae0" class="">“老师，你弄疼陶软同学了，她都哭了。”旁边的男同学小声提醒。</p><p id="0c52b02e-71aa-4b81-9ec7-f8ee85b80039" class="">男人就停下了前进的动作，把吻落在陶软的耳侧，问她：“真的很疼吗？”</p><p id="a8b71c92-641a-4efd-9e0e-0c2879c44e36" class="">这句话很温柔，又像顾之洲了。</p><p id="36516327-aba0-403e-ba55-13e4a6370d3f" class="">心中已经隐隐有了猜测，可陶软也分不清自己是生气更多还是庆幸更多，她就掉着眼泪，咬着唇一言不发。</p><p id="d7f9ed3e-170e-430e-851b-68b8e46c35a7" class="">男人却叹了一口气，把埋进去半个的龟头缓缓抽了出来。</p><p id="d5defe35-894d-4716-8023-298af73d7f09" class="">“还是舍不得弄疼你，万一软软只记得疼，以后在现实里也不给我操了该怎么办？”</p><p id="852e39f5-3e26-44d6-8d06-b77f763c6a41" class="">陶软抓住了关键：“你果然认识我对不对？”</p><p id="570cb104-fe80-4e3d-a841-ff957d757703" class="">男人轻笑了一声，舌头伸进了她的耳廓里舔弄，不答反问：“你说呢？”</p><p id="7fa4231f-24a9-45f9-9326-3e3e5d74827d" class="">男人又把陶软背抱了起来，分着她的腿给那些男同学看。</p><p id="dff6879f-8775-47b4-9393-eab24d10c896" class="">“虽然我也心疼软软，不过该惩罚还是要惩罚的，”男人把陶软的小穴送到了一个男同学嘴边，要他给陶软舔，还道：“不如这样，我让他们轮奸了软软好不好？”</p><p id="daf8316e-bb57-4f95-bcbe-7ef1910b8c82" class="">陶软身子一抖，却因为被吮吸了阴蒂，不受控制地流下了一大股水儿。</p><p id="fa0bb758-049a-4921-b463-4d256bd77146" class="">“好多汁水，软软是水蜜桃吗？”</p><p id="939f4b23-d82e-46e9-b4a1-18f183f14bff" class="">陶软想要咬唇，嘴边却不自觉地泄出了哼声。</p><p id="817b3726-3bd4-48eb-9658-26544ed0a124" class="">“下一个，陶软同学的小逼这么好吃，只给一个男人吃岂不是太可惜？”</p><p id="a03c6fc6-5376-4a03-8f6c-d613d33aa671" class="">说着那男同学便自动自觉地退开了，又换了另一个男同学过来。</p><p id="feca47a2-7678-4395-bd04-44f5c6f548d5" class="">“嗯～啊！”</p><p id="9df89eb7-496e-44b3-bea2-235d0305bfb8" class="">“陶软同学的小逼真好吃，”那少年从阴蒂舔到花唇再舔到穴口，把陶软的整个花道都舔的湿漉漉的，还不住地喟叹：“连流出来的骚汁都是甜的，老师，她该不会真是个桃子精吧？”</p><p id="5ef90548-fb72-4621-96d9-3157e09aa0ae" class="">男人空出一只手拍了拍她的屁股，笑道：“她是不是桃子精老师不知道，但老师知道她肯定是个骚货，来，把你的手指插到这骚货的穴里，给她捅捅逼。”</p><p id="b625a898-fdad-4024-bee3-9732e1687765" class="">“不要……啊～”</p><p id="fe9c595e-18ee-4412-b1df-d8ae8b048d48" class="">少年的手指还是插进来了，一根、两根……拇指揉弄她阴蒂的同时那伸进去的两根食指和中指也贴着她的媚肉狠狠一刮。</p><p id="b97e0a74-e7eb-433d-a2bf-81d3340e6779" class="">“好紧……”身后的男人嘶着气，又拍了一下她的屁股，“骚逼咬这么紧干什么？放松！”</p><p id="cf10d878-29cf-4d26-bfa0-a8a27238ccc2" class="">陶软原本已经被玩到不知所以，听到这话眼神却骤地恢复不少清明。</p><p id="d62870d5-3199-4330-b8cb-11c1549e4fe9" class="">不对……</p><p id="1415b595-a999-48be-8d5d-6eeb8077a9a5" class="">用手指捅她小穴的明明是那个同样看不清脸的男同学，可身后抱着他的男人却第一时间说好紧。</p><p id="7bbf73d4-55fd-4df2-9041-60bc2fd2e988" class="">会不会……</p><p id="1bdea245-b769-42c5-9b89-32f1b443e9de" class="">会不会没有别人，这梦里真实存在的只有她和男人两个人？</p><p id="36134a9a-f47f-48cd-b4ae-3f0e2c0edc6c" class="">这么一想，陶软的身子也不由得放松了下来，就由着那手指随意进出。</p><p id="3e9919ce-c471-4125-83bc-b1eb00378e34" class="">“老师，我好像碰到了一层阻碍。”那男同学又道。</p><p id="b8cf3b2d-a4e6-4309-b2bb-4e985dae541a" class="">男人轻笑：“那是这骚货的处女膜。”</p><p id="a8cd64ae-9430-46c1-b319-7f9e6eeef609" class="">“处女膜？”</p><p id="b15519ba-893b-4305-92fa-018c1763d8ae" class="">“对，这骚货现在还是个小处女，等会儿老师用阴茎把她的处女膜捅破，她就会变成真正的女人。”</p><p id="38abe7a5-4fae-4781-9ab8-0e94611bb116" class="">“好厉害。”</p><p id="c5acc471-3034-4ed7-8338-3237f4cccddd" class="">“继续给她扩张。”</p><p id="35335378-a9bc-4a0b-864f-4ac007aab8bd" class="">少年们的舌头和手指不住地抚慰陶软的小逼，阴蒂被吮吸逗弄着，穴口被舌头和手指轮流扩张，陶软根本没法抵抗那快感，只能凭着最后的清明，转头问身后的男人：“你可不可以、告诉我你是谁？”</p><p id="40abb67b-902f-41d9-89e0-df2d726b9c03" class="">扣在她小逼里的手指一弯，男人的轻笑随即响了起来：“你会知道的。”</p><p id="6b5efd19-aaac-4a97-b53e-3cad62ad0948" class="">这句话一出，陶软又觉得男人是顾之洲了，可她却没法想象顾之洲用那样清俊的脸说着这些黄暴的话。</p><p id="e6d5e3fb-4fb9-4d19-8ac3-02c2fcc816f8" class="">“嗯～”</p><p id="0f01250d-9d85-4bcb-8179-390d81aa87e4" class="">穴内的手指增加到了三根，还刮滑过了陶软的敏感点，陶软又不自觉地哼出声。</p><p id="f87f3ee5-fd27-4e67-8334-5a8fdb2c2ffd" class="">“乖，好好享受我给你的快感，不要想那么多。”</p><p id="9239ac8c-43b7-4da0-ac8b-a9ed2814305d" class="">男人的话说完，那玩着她小穴和阴蒂的手就加快了动作，甚至就连上衣和胸罩也不知道什么时候被人给扯掉了，不知道是谁的手覆盖了上来，还对她那一对白嫩挺翘的奶子肆意把玩揉捏。</p><p id="2402523d-5c9b-49bc-834a-12738b953e71" class="">“啊……啊～”</p><p id="3a644166-bded-403e-b254-d8bcfc284ffd" class="">“爽吗，软软，爽就再叫的大声些。”</p><p id="3aa00b5c-8eb7-4941-9ad2-29cbfed5a879" class="">“嗯～啊！”</p><p id="d3ad1e6d-45f3-4ea9-b69d-7cb42ddbeacb" class="">奶子和小逼一起被玩，很快陶软就受不住地高潮了，穴里还喷出了一大股水。</p><p id="46064fc6-8e19-4b3b-955a-1342c6c39e07" class="">“老师，她喷水了！”有男同学兴奋道。</p><p id="c5fac40c-54a6-4ecd-bf2f-c64dcdfd3374" class="">“那是潮吹。”</p><p id="36114f24-18da-4d0c-a15e-21a71ae7fc8f" class="">男人咬了咬她的耳垂，把粗大硬挺的鸡巴放出来，抵在了陶软刚喷过水的穴口。</p><p id="34f5b0e0-da13-44d5-ad4e-08fa1f77fe98" class="">“你们也一起。”</p><p id="453bb680-0162-45e5-af33-e823c160ecf3" class="">男人的话刚说完，那些男同学就齐齐放出了阴茎，还轮流地戳弄起了陶软的穴口。</p><p id="29905a84-1062-4d36-833d-ae69d78a92b5" class="">陶软只觉得自己的小逼正被好几根阴茎顶着，身后男人还使坏地问：“软软想要哪根鸡巴操你？”</p></div></article></body></html>
