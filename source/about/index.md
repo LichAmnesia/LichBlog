@@ -6,6 +6,10 @@ ACMer long long ago.
 
 Worked at Amazon before, Working at Google now. 
 
-Want to be a quant. 
+Wanted to be a quant. 
 
 Like trying new technologies.
+
+Currently I'm leading one of the ads products in Google.
+
+My contact info: me at alwa.info (replace at with @)

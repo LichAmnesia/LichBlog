@@ -71,7 +71,7 @@ Plugins:
 - hexo-filter-mathjax
 
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
