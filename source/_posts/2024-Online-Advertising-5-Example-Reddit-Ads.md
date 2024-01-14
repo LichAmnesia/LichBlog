@@ -101,19 +101,20 @@ Macros are small pieces of code that can dynamically insert relevant data into y
 2. **Copy Corresponding Macros**: From the list provided by Reddit, copy the macros that correspond to your required parameters.
 3. **Paste Macros into Tag URL**: Use the format **`parametername={{REDDIT_MACRO}}`** and connect parameters with an ‘&’.
 
-**Example**: **`https://tag.demo.com/ads?campaign={{CAMPAIGN_ID}}&advID={{ADVERTISING_ID}}&redditadgroup={{ADGROUP_ID}}&creative={{CREATIVE_ID}}&timestamp={{CACHEBUSTER}}`**
+Example: 
+> **`https://tag.demo.com/ads?campaign={{CAMPAIGN_ID}}&advID={{ADVERTISING_ID}}&redditadgroup={{ADGROUP_ID}}&creative={{CREATIVE_ID}}&timestamp={{CACHEBUSTER}}`**
 
 ### **Understanding Reddit Macros**
 
 Each macro serves a specific purpose and is case sensitive. Some common macros include:
 
-- **{{ADVERTISER_ID}}**: Unique Reddit account Advertiser ID.
-- **{{ADVERTISING_ID}}**: iOS IDFA or Android GAID.
-- **{{CAMPAIGN_ID}}, {{ADGROUP_ID}}, {{AD_ID}}**: IDs for Campaign, Ad Group, and Ad.
-- **{{COUNTRY}}, {{OS_GROUP}}, {{DEVICE_GROUP}}, {{PLATFORM_GROUP}}**: User location, operating system, device type, and platform type.
-- **{{CACHEBUSTER}}**: A UNIX/System timestamp in UTC.
-- **{{CREATIVE_H}}, {{CREATIVE_W}}**: Dimensions of the native ad post.
-- **{{DEVICE_OPT_OUT}}**: Indicates if a user has opted out of passing their advertising ID.
+- **`{{ADVERTISER_ID}}`**: Unique Reddit account Advertiser ID.
+- **`{{ADVERTISING_ID}}`**: iOS IDFA or Android GAID.
+- **`{{CAMPAIGN_ID}}, {{ADGROUP_ID}}, {{AD_ID}}`**: IDs for Campaign, Ad Group, and Ad.
+- **`{{COUNTRY}}, {{OS_GROUP}}, {{DEVICE_GROUP}}, {{PLATFORM_GROUP}}`**: User location, operating system, device type, and platform type.
+- **`{{CACHEBUSTER}}`**: A UNIX/System timestamp in UTC.
+- **`{{CREATIVE_H}}, {{CREATIVE_W}}`**: Dimensions of the native ad post.
+- **`{{DEVICE_OPT_OUT}}`**: Indicates if a user has opted out of passing their advertising ID.
 
 These macros enhance the tracking capabilities by providing dynamic, real-time data, making it easier for advertisers to measure and optimize their campaigns on Reddit effectively.
 
