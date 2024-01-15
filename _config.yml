@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Lich_Amnesia's Blog
+title: Shen Huang's Blog
 subtitle:
 description: 休言万事转头空，未转头时皆梦
-author: Lich_Amnesia
+author: Shen Huang
 language: en-US
 timezone:
 
@@ -15,6 +15,7 @@ timezone:
 url: https://www.alwa.info
 # url: http://alwa.info
 root: /
+# permalink: :year/:title.html
 permalink: :year/:title.html
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
