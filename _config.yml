@@ -16,7 +16,7 @@ url: https://www.alwa.info
 # url: http://alwa.info
 root: /
 # permalink: :year/:title.html
-permalink: :year/:title.html
+permalink: :title.html
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
 
