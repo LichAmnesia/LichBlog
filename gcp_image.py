@@ -20,7 +20,8 @@ def find_all_files_with_prefix(local_prefix='public', prefix=''):
     ans_list = []
     for name in name_list:
         if os.path.isdir(os.path.join(local_prefix, os.path.join(prefix, name))):
-            ans_list.extend(find_all_files_with_prefix(local_prefix, os.path.join(prefix, name)))
+            continue
+            # ans_list.extend(find_all_files_with_prefix(local_prefix, os.path.join(prefix, name)))
         else:
             ans_list.append(os.path.join(prefix, name))
     return ans_list
