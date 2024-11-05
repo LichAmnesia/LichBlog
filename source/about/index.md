@@ -13,5 +13,3 @@ Like trying new technologies.
 Currently I'm leading one of the ads products in Google.
 
 My contact info: me at alwa.info (replace at with @)
-
-`#ShareASale` For shareasale verification.
