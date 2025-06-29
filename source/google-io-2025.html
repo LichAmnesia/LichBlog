@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google I/O 2025 AI Wave: Deep Dive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Visualization & Content Choices:
+        - Gemini Mentions (Intro): Big Number (HTML/CSS). Goal: Inform. Justification: Impactful stat. NO SVG.
+        - Gemini Pro/Flash Comparison (Gemini Core): Styled HTML Table. Goal: Compare. Justification: Clear visual comparison of features. NO SVG.
+        - Deep Think Concept (Gemini Core): HTML/CSS Diagram. Goal: Organize/Inform. Justification: Visual aid for abstract concept. NO SVG.
+        - AI Search Mode Flow (Search): HTML/CSS Diagram. Goal: Organize. Justification: Clarify multi-step process. NO SVG.
+        - CTR Trend (Search): Conceptual Chart.js Line Chart. Goal: Change. Justification: Illustrate potential impact. Interaction: Tooltips. NO SVG.
+        - Virtual Try-On (Shopping): Interactive HTML/JS element. Goal: Inform/Engage. Justification: Simple demo of visual feature. NO SVG.
+        - Google Beam Concept (Communication): HTML/CSS Diagram. Goal: Inform. Justification: Visual for 3D call. NO SVG.
+        - Text-to-Film Flow (Creative Tools): HTML/CSS Diagram. Goal: Organize. Justification: Simple process flow. NO SVG.
+        - Jules Autonomous Agent Flow (Dev Tools): HTML/CSS Diagram. Goal: Organize. Justification: Illustrate agent process. NO SVG.
+        - AI Glasses Concept (XR): HTML/CSS Diagram. Goal: Inform. Justification: Visual for device concept. NO SVG.
+        - SynthID Icon (Trust): Unicode char/HTML. Goal: Inform. Justification: Simple visual cue. NO SVG.
+        - AI Subscription Comparison (Commercialization): Chart.js Bar Chart. Goal: Compare. Justification: Easy comparison of plans. Interaction: Tooltips. NO SVG.
+        - Google AI Ecosystem (Conclusion): HTML/CSS Diagram. Goal: Organize/Relationships. Justification: Show interconnectedness. NO SVG.
+        - Analyses: Expandable text blocks (JS). Goal: Inform (detailed). Justification: Provide depth without clutter.
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #343a40; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (max-width: 768px) { .chart-container { height: 300px; max-height: 350px; } }
+        .sticky-nav { position: sticky; top: 0; z-index: 50; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.3s ease, border-bottom-color 0.3s ease; border-bottom: 2px solid transparent; }
+        .nav-link:hover, .nav-link.active { color: #0891b2; border-bottom-color: #0891b2; } /* cyan-600 */
+        .card { background-color: #ffffff; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #e9ecef; }
+        .section-title { font-size: 1.875rem; font-weight: 600; color: #0d9488; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #ccfbf1; } /* teal-600, teal-100 */
+        .subsection-title { font-size: 1.25rem; font-weight: 500; color: #0e7490; margin-top: 1.5rem; margin-bottom: 0.75rem; } /* cyan-700 */
+        .big-number { font-size: 2.5rem; font-weight: 700; color: #059669; } /* emerald-600 */
+        .analysis-box { background-color: #f1f5f9; border-left: 4px solid #0891b2; padding: 1rem; margin-top: 1rem; border-radius: 0.25rem; } /* slate-100, cyan-600 */
+        .analysis-title { font-weight: 500; color: #0e7490; cursor: pointer; } /* cyan-700 */
+        .analysis-content { display: none; margin-top: 0.5rem; font-size: 0.875rem; color: #475569; } /* slate-600 */
+        .flow-diagram div { border: 1px solid #94a3b8; background-color: #f8fafc; padding: 0.5rem 1rem; border-radius: 0.375rem; text-align: center; } /* slate-400, slate-50 */
+        .flow-arrow { color: #64748b; font-size: 1.5rem; margin: 0.25rem 0; } /* slate-500 */
+        .interactive-button { background-color: #0ea5e9; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.3s ease; } /* sky-500 */
+        .interactive-button:hover { background-color: #0284c7; } /* sky-600 */
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; font-size: 0.875rem; }
+        th { background-color: #f3f4f6; color: #111827; font-weight: 500; } /* gray-100, gray-800 */
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav id="mainNav" class="sticky-nav">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="text-xl font-semibold text-cyan-700">Google I/O 2025 Insights</div>
+                <div class="hidden md:flex space-x-6 text-sm">
+                    <a href="#intro" class="nav-link">Overview</a>
+                    <a href="#gemini-core" class="nav-link">Gemini Core</a>
+                    <a href="#ai-experiences" class="nav-link">AI Experiences</a>
+                    <a href="#ai-creation" class="nav-link">AI Creation</a>
+                    <a href="#future-platforms" class="nav-link">Future Platforms</a>
+                    <a href="#conclusion" class="nav-link">Conclusion</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-slate-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200">
+            <a href="#intro" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">Overview</a>
+            <a href="#gemini-core" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">Gemini Core</a>
+            <a href="#ai-experiences" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">AI Experiences</a>
+            <a href="#ai-creation" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">AI Creation</a>
+            <a href="#future-platforms" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">Future Platforms</a>
+            <a href="#conclusion" class="block py-2 px-4 text-sm text-slate-700 hover:bg-slate-100">Conclusion</a>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-cyan-50 to-teal-50 py-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-teal-700 mb-3">Google I/O 2025 AI Wave: A Deep Dive</h1>
+            <p class="text-lg text-slate-600">Interactively exploring how AI is reshaping Google's ecosystem and future tech</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <section id="intro" class="card">
+            <h2 class="section-title">Overview: AI is Here, The Future is Now</h2>
+            <p class="mb-4 text-slate-700">Welcome to the interactive deep dive into Google I/O 2025. This year's conference delivered a core message: Artificial Intelligence (AI) is no longer just one among many technologies; it's the central driving force of Google's entire ecosystem. From search to creation, AI is redefining everything. This application will guide you through the key announcements, exploring the underlying technology and its profound implications.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                <div class="p-6 bg-teal-50 rounded-lg">
+                    <div class="big-number">92 times</div>
+                    <p class="text-xl font-semibold text-teal-700 mt-1">"AI" was mentioned</p>
+                    <p class="text-sm text-slate-500">Highlighting AI's central role</p>
+                </div>
+                <div class="p-6 bg-cyan-50 rounded-lg">
+                    <div class="big-number">95 times</div>
+                    <p class="text-xl font-semibold text-cyan-700 mt-1">"Gemini" flagship model mentioned</p>
+                    <p class="text-sm text-slate-500">The core engine of Google's AI strategy</p>
+                </div>
+            </div>
+            <p class="mt-6 text-slate-600">Google's official summary emphasized: The core theme of the conference is to introduce innovative AI into Google's various products to enhance their utility. This marks the comprehensive beginning of an AI-driven future. Let's explore these changes together.</p>
+        </section>
+
+        <section id="gemini-core" class="card">
+            <h2 class="section-title">Gemini Core: The Ever-Evolving Brain</h2>
+            <p class="mb-6 text-slate-700">Google's Gemini model series, especially 2.5 Pro and 2.5 Flash, were the absolute stars of this I/O. They not only made significant performance advancements but also brought important updates in developer experience, learning capabilities, and security, collectively forming the cornerstone of Google's AI strategy.</p>
+
+            <div class="mb-8">
+                <h3 class="subsection-title">Gemini 2.5 Pro vs. Gemini 2.5 Flash</h3>
+                <p class="mb-4 text-slate-600">These two models are optimized for different needs: Pro focuses on complex tasks and deep reasoning, while Flash emphasizes speed and cost-effectiveness. The table below summarizes their key features and differences announced at I/O 2025.</p>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Gemini 2.5 Pro</th>
+                                <th>Gemini 2.5 Flash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Primary Goal</td><td>Complex tasks, coding, deep reasoning</td><td>Speed, efficiency, cost-effectiveness</td></tr>
+                            <tr><td>Reasoning (Deep Think)</td><td>Supports experimental "Deep Think" enhanced reasoning</td><td>Standard reasoning, first Flash model with "thinking" capabilities</td></tr>
+                            <tr><td>Coding Performance</td><td>Leading-edge, for complex coding tasks</td><td>Performance boost, for rapid coding needs</td></tr>
+                            <tr><td>Learning (LearnLM)</td><td>Deep integration with LearnLM, leading learning model</td><td>Benefits from Gemini base, supports learning scenarios</td></tr>
+                            <tr><td>Speed/Efficiency</td><td>Emphasizes reasoning depth and capability</td><td>Optimized for speed and low cost, 20-30% token efficiency gain</td></tr>
+                            <tr><td>Context Window</td><td>1 million tokens</td><td>(1M not explicitly highlighted, but long-context improvements)</td></tr>
+                            <tr><td>Key I/O 2025 Updates</td><td>Deep Think mode, LearnLM integration, native audio output, advanced security, Thought Summaries/Budgets (coming soon)</td><td>Overall performance boost, native audio output, advanced security, Thought Summaries/Budgets, better token efficiency, available in Gemini app</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Data Source: Google I/O 2025 AMA Deep Dive Report [3, 4, 5]</p>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="subsection-title">Unveiling "Deep Think" Mode</h3>
+                <p class="mb-4 text-slate-600">"Deep Think" is an experimental enhanced reasoning mode for Gemini 2.5 Pro, designed for highly complex tasks like math and programming. It employs techniques like "parallel thinking," allowing the model to consider multiple hypotheses before responding, and has shown excellent performance on tough benchmarks like USAMO and LiveCodeBench.</p>
+                <div class="flow-diagram flex flex-col items-center space-y-2 my-4 p-4 bg-slate-50 rounded-md">
+                    <div>Complex Problem Input (Math/Code)</div>
+                    <div class="flow-arrow">▼</div>
+                    <div>Gemini 2.5 Pro (Deep Think Mode)</div>
+                    <div class="flow-arrow">▼</div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div>Hypothesis 1 🤔</div>
+                        <div>Hypothesis 2 🤔</div>
+                        <div>Hypothesis 3 🤔</div>
+                    </div>
+                    <div class="flow-arrow">▼</div>
+                    <div>Comprehensive Deliberation & Reasoning</div>
+                    <div class="flow-arrow">▼</div>
+                    <div>Optimized High-Quality Output</div>
+                </div>
+                <p class="text-sm text-slate-600">Due to its cutting-edge nature, Deep Think is undergoing extensive safety evaluations and will initially be available to trusted testers, with AI Ultra subscribers expected to gain access later.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <h3 class="subsection-title">Enhancing Developer Experience</h3>
+                    <p class="mb-2 text-slate-600"><strong class="text-cyan-700">"Thought Summaries":</strong> Increases transparency into the AI's reasoning process, presenting internal thinking steps (key details, tool usage) clearly, simplifying validation and debugging.</p>
+                    <p class="text-slate-600"><strong class="text-cyan-700">"Thinking Budgets":</strong> Allows developers to control the computational resources and cost for the model's "thinking" process, balancing reasoning depth with cost/latency.</p>
+                </div>
+                <div>
+                    <h3 class="subsection-title">LearnLM Integration & Security</h3>
+                    <p class="mb-2 text-slate-600"><strong class="text-teal-700">LearnLM Integration:</strong> Incorporates LearnLM models, co-built with education experts, into Gemini 2.5, enabling it to not just provide answers but also explain the process, enhancing learning efficiency.</p>
+                    <p class="text-slate-600"><strong class="text-teal-700">Enhanced Security:</strong> The Gemini 2.5 series is touted as Google's safest model family yet, with improved defenses against attacks like indirect prompt injection.</p>
+                </div>
+            </div>
+
+            <div class="analysis-box">
+                <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 1.1: Strategic Significance of "Deep Think" (Click to Expand/Collapse)</h4>
+                <div class="analysis-content">
+                    <p>"Deep Think" is Google's strategic offensive to reclaim leadership in AI reasoning, directly targeting areas where competitors have historically shown strength. Its phased rollout highlights both its cutting-edge nature and Google's caution in deploying highly advanced, potentially unpredictable AI capabilities. This is more than a feature update; it's a spearhead in Google's bid for AI dominance in complex problem-solving.</p>
+                </div>
+            </div>
+            <div class="analysis-box mt-4">
+                <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 1.2: Value of "Thought Summaries/Budgets" for Developers (Click to Expand/Collapse)</h4>
+                <div class="analysis-content">
+                    <p>The introduction of "Thought Summaries" and "Thinking Budgets" marks a crucial evolution in AI model interaction for developers. It represents a shift from AI as an opaque oracle to a more transparent, controllable, and economically manageable partner, essential for enterprise adoption and building robust AI applications, directly addressing enterprise client needs for auditability and efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-experiences" class="card">
+            <h2 class="section-title">AI Reshaping Experiences: Search, Shopping & Communication</h2>
+            <p class="mb-6 text-slate-700">AI is profoundly changing how we interact with the digital world. Google is deeply integrating AI into core services like Search, Shopping, and Communication to deliver smarter, more personalized, and efficient user experiences, ushering in a new era of interaction.</p>
+
+            <div id="search-experience" class="mb-10 p-4 bg-slate-50 rounded-lg">
+                <h3 class="subsection-title text-sky-700">Search Revolution: AI Mode Arrives</h3>
+                <p class="mb-4 text-slate-600">Google Search is undergoing its "biggest AI upgrade ever." The new "AI Mode" (now available to all users in the US) offers an end-to-end AI search experience, more powerful than AI Overviews, with advanced reasoning, multimodal interaction, and follow-up questions. It uses "query fan-out" to break down questions and issue multiple queries simultaneously for deeper web exploration. AI Overviews currently have 1.5 billion monthly active users.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <h4 class="text-md font-semibold text-sky-600 mb-2">Key Features:</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                            <li><strong>Deep Search:</strong> For complex questions, performs hundreds of searches to generate expert-level, cited reports.</li>
+                            <li><strong>Search Live:</strong> Combines with Project Astra for real-time conversational search about what you see via camera.</li>
+                            <li><strong>Agent Capabilities (Coming Soon):</strong> Handles tasks like bookings via Project Mariner.</li>
+                            <li><strong>Personalized Context (Coming Soon):</strong> Uses history and context from Gmail, etc., for personalized suggestions.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <h4 class="text-md font-semibold text-sky-600 mb-2">Impact on SEO & Content Creators (Conceptual Chart):</h4>
+                            <div class="chart-container h-[250px] md:h-[280px]">
+                                <canvas id="seoImpactChart"></canvas>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1 text-center">AI summaries may reduce traditional click-through rates; content needs to shift to AI-citable "knowledge units."</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold text-sky-600 mb-2">AI Search Flow Example:</h4>
+                        <div class="flow-diagram flex flex-col space-y-1 items-center text-xs p-3 bg-white rounded shadow">
+                            <div>User Complex Query <span class="text-sky-500">❓</span></div>
+                            <div class="flow-arrow">▼</div>
+                            <div>AI Mode (Gemini 2.5 Powered) <span class="text-sky-500">🤖</span></div>
+                            <div class="flow-arrow">▼</div>
+                            <div>Query Fan-out (Parallel Sub-topics) <span class="text-sky-500">🔍</span></div>
+                            <div class="flow-arrow">▼</div>
+                            <div>Info Fusion & Deep Reasoning <span class="text-sky-500">🧩</span></div>
+                            <div class="flow-arrow">▼</div>
+                            <div>Comprehensive AI Answer/Report <span class="text-sky-500">📄</span></div>
+                        </div>
+                         <p class="mt-3 text-sm text-slate-600">User adoption challenges include information overload, trust/accuracy, and privacy concerns.</p>
+                    </div>
+                </div>
+                <div class="analysis-box mt-6">
+                    <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 3.1: AI Mode's Strategic Response (Click to Expand/Collapse)</h4>
+                    <div class="analysis-content"><p>AI Mode is Google's definitive response to the threat from conversational AI search alternatives like Perplexity and ChatGPT, aiming to retain users within its ecosystem by providing richer, direct answers, even if it cannibalizes traditional search clicks.</p></div>
+                </div>
+                 <div class="analysis-box mt-4">
+                    <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 3.2: Impact of Query Fan-out & Deep Search on Content Strategy (Click to Expand/Collapse)</h4>
+                    <div class="analysis-content"><p>"Query fan-out" and "Deep Search" signify a fundamental shift in information aggregation, moving from keyword matching to query deconstruction and multi-source fusion, compelling a shift in content strategy towards creating authoritative, citable "knowledge units."</p></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="shopping-experience" class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-orange-700">AI-Powered Shopping Experience</h3>
+                    <p class="mb-4 text-slate-600">Shopping AI Mode combines with Google's Shopping Graph (over 50 billion product listings) to offer virtual try-on, smart price tracking, and even AI agent checkout, making online shopping more intuitive and personalized.</p>
+                    <div class="text-center mb-4">
+                        <div id="virtualTryOnContainer" class="w-40 h-52 mx-auto border-2 border-orange-300 rounded flex items-center justify-center bg-orange-100 mb-2 relative overflow-hidden">
+                            <span class="text-orange-500 text-5xl">👤</span>
+                            <img id="clothingImage" src="https://placehold.co/160x208/FFFFFF/FFFFFF?text=" alt="Try-on clothing" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+                        </div>
+                        <button id="tryOnButton" class="interactive-button bg-orange-500 hover:bg-orange-600 text-sm">Virtual Try-On (Example)</button>
+                        <p class="text-xs text-slate-500 mt-1">Upload a photo to virtually try on clothes (conceptual demo).</p>
+                    </div>
+                    <p class="text-sm text-slate-600"><strong class="text-orange-600">Smart Agent Checkout:</strong> Users set preferences, and AI can track prices and automatically purchase (with permission) when prices drop.</p>
+                    <div class="analysis-box mt-4">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 4.1: Role of AI Shopping Intermediary (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>AI shopping features, especially agent checkout, represent a significant step for AI as a purchasing intermediary, potentially weakening direct brand-customer connections and giving Google more control in e-commerce transactions.</p></div>
+                    </div>
+                </div>
+
+                <div id="communication-experience" class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-lime-700">Future of Communication: Google Beam</h3>
+                    <p class="mb-4 text-slate-600">Google Beam (formerly Project Starline) is an AI-first 3D video communication platform that transforms 2D video streams into realistic, immersive call experiences using a six-camera array, AI volumetric video models, and a light-field display, no special glasses needed.</p>
+                    <div class="flex justify-center items-center space-x-4 my-4 p-4 bg-lime-50 rounded-lg">
+                        <div class="text-center"> <span class="text-6xl">👤</span> <p class="text-xs text-lime-600">User A</p> </div>
+                        <div class="text-lime-500 text-3xl font-bold animate-pulse">&lt;-- ✨3D✨ --&gt;</div>
+                        <div class="text-center"> <span class="text-6xl">👤</span> <p class="text-xs text-lime-600">User B</p> </div>
+                    </div>
+                    <p class="text-sm text-slate-600"><strong class="text-lime-600">Core Advantages:</strong> More natural immersion, capturing subtle expressions and eye contact. Gemini-powered advanced voice translation supports multilingual conversations. HP will commercialize the system, expected late 2025.</p>
+                     <div class="analysis-box mt-4">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 5.2: Value of Real-time Translation in Beam (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>Integrating Gemini-powered real-time voice translation into Beam is a strong differentiator, significantly enhancing its value proposition for global businesses by making cross-language collaboration more seamless.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ai-creation" class="card">
+            <h2 class="section-title">AI Empowering Creation & Development: Tool Revolution</h2>
+            <p class="mb-6 text-slate-700">Google is revolutionizing creative and development workflows, from filmmaking to software programming, with a suite of powerful AI tools aimed at lowering barriers, boosting efficiency, and unlocking new possibilities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-purple-700">AI-Driven Creative Tools: Flow, Veo 3, Imagen 4</h3>
+                    <p class="mb-4 text-slate-600">Google's AI creative suite democratizes high-quality content creation. Flow, an AI filmmaking tool, combines Veo 3 (video generation with native audio) and Imagen 4 (2K image generation) to let users create cinematic clips from text prompts.</p>
+                    <div class="flow-diagram flex items-center justify-center space-x-2 text-purple-600 my-4 text-sm">
+                        <div>Text Prompt 📝</div> <div class="flow-arrow text-2xl">➡️</div> 
+                        <div>Flow (Veo 3 + Imagen 4)</div> <div class="flow-arrow text-2xl">➡️</div>
+                        <div>Film Clip 🎬 + Audio 🔊</div>
+                    </div>
+                    <p class="text-sm text-slate-600"><strong class="text-purple-600">Veo 3 Highlights:</strong> Generates video with synchronized audio (sound effects, dialogue, lip-sync), a major step for AI video beyond the "silent film" era. Content is watermarked with SynthID.</p>
+                    <div class="analysis-box mt-4">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 6.1: Strategic Importance of Google's Creative Suite (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>The combination of Flow, Veo 3 (with native audio), and Imagen 4 represents a strategic move by Google to establish a significant presence in AI-driven creative workflows. Veo 3's native audio is a key differentiator.</p></div>
+                    </div>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-indigo-700">AI Programming Assistants & Platforms</h3>
+                    <p class="mb-4 text-slate-600">From code completion to autonomous agents, AI is transforming software development. Tools like Gemini Code Assist and Jules, alongside updates to platforms like Firebase and Vertex AI, are empowering developers.</p>
+                    <p class="text-sm text-slate-600 mb-2"><strong class="text-indigo-600">Gemini Code Assist:</strong> Powered by Gemini 2.5, acts as a code reviewer in GitHub, offering deep code reviews. Will soon support a 2 million token context window.</p>
+                    <p class="text-sm text-slate-600"><strong class="text-indigo-600">Jules Autonomous Agent:</strong> In public beta, autonomously reads, writes, and processes code for tasks like testing, fixing, and updating.</p>
+                    <div class="flow-diagram flex flex-col items-center space-y-1 my-4 text-xs p-3 bg-white rounded shadow">
+                        <div>Developer Instruction 👨‍💻</div> <div class="flow-arrow">▼</div>
+                        <div>Jules (Autonomous Agent) <span class="text-indigo-500">🤖</span></div> <div class="flow-arrow">▼</div>
+                        <div>Read/Understand Code 📖 ➡️ Write Tests 🧪 ➡️ Fix Bugs 🛠️ ➡️ Update Dependencies 🔄</div> <div class="flow-arrow">▼</div>
+                        <div>Task Completed ✅</div>
+                    </div>
+                    <div class="analysis-box mt-4">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 7.1: Evolution from Assistance to Autonomous Agents (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>Google is pushing beyond simple code completion towards more autonomous AI agents like Jules, signaling a future where developers delegate more complex tasks to AI, shifting their roles towards architecture and AI output validation.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future-platforms" class="card">
+            <h2 class="section-title">Future Platforms: XR, Trust & Commercialization</h2>
+            <p class="mb-6 text-slate-700">Google is defining the next computing paradigm by bringing Gemini to glasses and headsets via the Android XR platform. Simultaneously, it's building trust with technologies like SynthID and exploring commercialization paths for AI services through tiered subscription plans.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-pink-700">Android XR & AI Glasses</h3>
+                    <p class="mb-3 text-sm text-slate-600">The Android XR platform, combined with Gemini, enables AI assistants to perceive the world from the user's perspective, offering hands-free help like navigation and real-time translation ("subtitles for the world"). Hardware partners include Samsung and Gentle Monster.</p>
+                    <div class="text-center my-3">
+                        <span class="text-6xl">👓</span>
+                        <p class="text-xs text-pink-600">AI-Powered Smart Glasses Concept</p>
+                    </div>
+                    <p class="text-xs text-slate-500">Challenges: Privacy, battery life, social acceptance.</p>
+                    <div class="analysis-box mt-3">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 9.1: Google's Strategic XR Play (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>Google's re-entry into XR with AI-powered glasses is a strategic attempt to define the next personal computing paradigm, leveraging its AI prowess and open ecosystem philosophy as differentiators. Overcoming privacy concerns and hardware limitations will be key.</p></div>
+                    </div>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-amber-700">Building Trust: SynthID</h3>
+                    <p class="mb-3 text-sm text-slate-600">The SynthID Detector portal helps identify content generated by Google AI (images, audio, video, text) by detecting embedded invisible watermarks, aiming to reduce misinformation. Over 10 billion assets have been watermarked.</p>
+                    <div class="text-center my-3">
+                        <span class="text-5xl text-amber-600">🛡️</span>
+                        <p class="text-xs text-amber-600">SynthID Content Provenance</p>
+                    </div>
+                    <p class="text-xs text-slate-500">Limitations: Primarily effective for Google's own AI; can potentially be bypassed.</p>
+                     <div class="analysis-box mt-3">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 10.1: SynthID's Effectiveness & Limitations (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>SynthID is Google's attempt to establish a technical infrastructure for AI content provenance, but its effectiveness is limited by its proprietary nature and the ongoing "cat-and-mouse" game with those trying to bypass such watermarks. Its biggest impact may be in setting a standard.</p></div>
+                    </div>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg">
+                    <h3 class="subsection-title text-emerald-700">AI Commercialization: Subscription Plans</h3>
+                    <p class="mb-3 text-sm text-slate-600">Google is commercializing its AI capabilities through Google AI Pro ($19.99/month) and Google AI Ultra ($249.99/month) subscription plans.</p>
+                    <div class="chart-container h-[280px] md:h-[320px]">
+                        <canvas id="subscriptionChart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1 text-center">The Ultra plan targets professionals, offering top-tier AI tools, higher limits, and cloud services.</p>
+                    <div class="analysis-box mt-3">
+                        <h4 class="analysis-title" onclick="toggleAnalysis(this)">▼ Analysis 11.1: AI Ultra's Commercialization Strategy (Click to Expand/Collapse)</h4>
+                        <div class="analysis-content"><p>AI Ultra is Google's strategic move to monetize its most advanced AI capabilities, creating a premium tier with a high-value package for professionals and "prosumers," and serving as a showcase for cutting-edge innovations.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="card">
+            <h2 class="section-title">Conclusion: Google's AI Gambit & The Road Ahead</h2>
+            <p class="mb-4 text-slate-700">Google I/O 2025 clearly showcased its comprehensive "Gemini everywhere" AI strategy. By deeply integrating AI across all layers of its consumer, developer, and enterprise ecosystems, Google aims not just to compete but to leverage its vast data, infrastructure, and product reach to create deeply integrated AI experiences that are hard to replicate. The "ship when ready" philosophy accelerates innovation but risks releasing unpolished features, requiring a delicate balance between speed and user trust.</p>
+            <div class="p-6 bg-slate-50 rounded-lg shadow-inner mb-6">
+                <h3 class="text-xl font-semibold text-center mb-4 text-cyan-700">Google's Core AI Ecosystem Strategy</h3>
+                <div class="flex flex-wrap justify-center items-center gap-3 text-xs">
+                    <div class="flow-diagram">Search (AI Mode)</div> <div class="flow-diagram">Android (XR, Gemini)</div>
+                    <div class="flow-diagram">Workspace (Gemini Integration)</div> <div class="flow-diagram">Cloud (Vertex AI)</div>
+                    <div class="flow-diagram">Creative Tools (Flow, Veo)</div> <div class="flow-diagram">Developer Tools (Code Assist, Jules)</div>
+                </div>
+                <p class="text-center mt-3 text-sm text-slate-600">Gemini as the core engine, powering intelligent upgrades across all products and services.</p>
+            </div>
+            <p class="text-slate-600 mb-2"><strong class="text-teal-700">Impact on Industry:</strong> Intensified AI arms race; potential shifts in search, advertising, creative industries, and enterprise software.</p>
+            <p class="text-slate-600 mb-2"><strong class="text-teal-700">Impact on Developers:</strong> More powerful AI tools and platforms, but also a need to adapt to new paradigms (agentic AI, multimodal development, prompt engineering).</p>
+            <p class="text-slate-600"><strong class="text-teal-700">Impact on Users:</strong> Smarter, personalized digital experiences, but also concerns about privacy, accuracy, and job displacement.</p>
+            <p class="mt-4 text-slate-700 font-semibold">The dawn of pervasive intelligence is here, bringing both opportunities and challenges. Google's AI gambit will profoundly shape the future of technology.</p>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-8 text-center">
+        <p class="text-sm">&copy; 2025 Google I/O AI Wave Deep Dive. Compiled from public AMA reports.</p>
+        <p class="text-xs mt-1">All trademarks are property of their respective owners.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navLinks = document.querySelectorAll('.nav-link, #mobileMenu a');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.hash !== "") {
+                        e.preventDefault();
+                        const hash = this.hash;
+                        const targetElement = document.querySelector(hash);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                    if(this.classList.contains('nav-link')) {
+                        const parentLinks = document.querySelectorAll('#mainNav .nav-link');
+                        parentLinks.forEach(parentLink => {
+                            if(parentLink.getAttribute('href') === this.getAttribute('href')) {
+                                parentLink.classList.add('active');
+                            } else {
+                                parentLink.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#\${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        function toggleAnalysis(element) {
+            const content = element.nextElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                element.textContent = element.textContent.replace('▼', '▲').replace('Expand', 'Collapse');
+            } else {
+                content.style.display = "none";
+                element.textContent = element.textContent.replace('▲', '▼').replace('Collapse', 'Expand');
+            }
+        }
+
+        function processChartLabels(labels, maxLength = 16) {
+            return labels.map(label => {
+                if (typeof label === 'string' && label.length > maxLength) {
+                    const words = label.split(' ');
+                    let currentLine = '';
+                    const lines = [];
+                    for (const word of words) {
+                        if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                            lines.push(currentLine.trim());
+                            currentLine = word + ' ';
+                        } else {
+                            currentLine += word + ' ';
+                        }
+                    }
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            });
+        }
+        
+        const chartTooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: '#334155', font: { family: "'Inter', sans-serif" } } },
+                tooltip: { 
+                    callbacks: { title: chartTooltipTitleCallback },
+                    titleFont: { family: "'Inter', sans-serif" },
+                    bodyFont: { family: "'Inter', sans-serif" },
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                }
+            },
+            scales: {
+                x: { ticks: { color: '#475569', font: { family: "'Inter', sans-serif" } }, grid: { color: '#e2e8f0' } },
+                y: { ticks: { color: '#475569', font: { family: "'Inter', sans-serif" } }, grid: { color: '#e2e8f0' } }
+            }
+        };
+
+        const seoCtx = document.getElementById('seoImpactChart')?.getContext('2d');
+        if (seoCtx) {
+            new Chart(seoCtx, {
+                type: 'line',
+                data: {
+                    labels: processChartLabels(['Q1 \'24', 'Q2 \'24', 'Q3 \'24', 'Q4 \'24', 'Q1 \'25 (Forecast)']),
+                    datasets: [{
+                        label: 'Traditional Search CTR (Conceptual)', data: [1.4, 1.2, 0.9, 0.7, 0.6],
+                        borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)', fill: true, tension: 0.1
+                    }, {
+                        label: 'AI Overview/Mode Usage (Conceptual)', data: [10, 25, 45, 60, 75],
+                        borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.1
+                    }]
+                },
+                options: commonChartOptions
+            });
+        }
+
+        const tryOnButton = document.getElementById('tryOnButton');
+        const clothingImage = document.getElementById('clothingImage');
+        const clothes = [
+            'https://placehold.co/160x208/34D399/FFFFFF?text=Style+A',
+            'https://placehold.co/160x208/F59E0B/FFFFFF?text=Style+B',
+            'https://placehold.co/160x208/EC4899/FFFFFF?text=Style+C'
+        ];
+        let currentCloth = 0;
+        if (tryOnButton && clothingImage) {
+            tryOnButton.addEventListener('click', () => {
+                currentCloth = (currentCloth + 1) % clothes.length;
+                clothingImage.style.opacity = '0';
+                setTimeout(() => {
+                    clothingImage.src = clothes[currentCloth];
+                    clothingImage.style.opacity = '1';
+                }, 300);
+            });
+        }
+
+        const subCtx = document.getElementById('subscriptionChart')?.getContext('2d');
+        if (subCtx) {
+            new Chart(subCtx, {
+                type: 'bar',
+                data: {
+                    labels: processChartLabels(['AI Pro ($19.99/month)', 'AI Ultra ($249.99/month)']),
+                    datasets: [
+                        { label: 'Core Model Access (Tier)', data: [8, 10], backgroundColor: 'rgba(14, 165, 233, 0.7)' }, // sky-500
+                        { label: 'Creative Tools (Veo Tier)', data: [2, 3], backgroundColor: 'rgba(132, 204, 22, 0.7)' }, // lime-500
+                        { label: 'Storage (TB)', data: [2, 30], backgroundColor: 'rgba(249, 115, 22, 0.7)' } // orange-500
+                    ]
+                },
+                options: {
+                    ...commonChartOptions,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { ...commonChartOptions.scales.x, title: { display: true, text: 'Relative Value/Capacity (Conceptual)', color: '#475569'} },
+                        y: { ...commonChartOptions.scales.y }
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
